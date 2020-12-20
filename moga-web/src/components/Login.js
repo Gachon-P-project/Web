@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import '../css/Login.css';
 import logo from "../image/logo.png";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-class Login extends Component {
+class Login extends React.Component {
     render() {
       const onFinish = (values) => {
         console.log('Received values of form: ', values);
