@@ -1,12 +1,10 @@
 import React from 'react';
 import Login from './components/Login';
 
-class App extends React.Component {
-  render() {
-    return(
-      <Login></Login>
-    );
-  }
+function App() {
+  return(
+    <Login />
+  );
 }
 
 export default App;
