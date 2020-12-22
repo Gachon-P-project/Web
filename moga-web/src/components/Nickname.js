@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Modal, Input, Button } from 'antd';
 
-function Nickname({ state, close }) {
+function Nickname({ history, state, close }) {
     
     const [nickname, setNickname] = useState('');   // 닉네임 값을 state로 정의
     const [dupState, setDupState] = useState('none');   // 중복 메시지 display를 state로 정의
@@ -22,17 +22,27 @@ function Nickname({ state, close }) {
         }
     }
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+    
+        /*
+          POST
+        */
+    
+        history.push("/timetable");
+      }
+
     return (
         state ?
         <Modal
             title="닉네임을 설정하세요."
             centered
             visible={state}
-            onOk={duplicateChk}
+            onOk={onSubmitHandler}
             onCancel={close}
             width={350}
             footer={[
-                <Button key="submit" type="primary" onClick={duplicateChk}>
+                <Button key="submit" type="primary" onClick={onSubmitHandler}>
                     OK
                 </Button>,
             ]}
