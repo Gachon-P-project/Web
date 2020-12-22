@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import Nickname from './Nickname';
 import 'antd/dist/antd.css';
 import '../css/Login.css';
-import background from "../image/gachon.png";
-import logo from "../image/logo.png";
+import background from '../image/gachon.png';
+import logo from '../image/logo.png';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 

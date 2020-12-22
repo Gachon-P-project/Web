@@ -1,0 +1,21 @@
+.header {
+    border: 1px solid black;
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.logoBox {
+    border: 1px solid green;
+    margin: 25px auto 20px;
+}
+
+.header-logo {
+    border: 1px solid rebeccapurple;
+    display: block;
+    width: 200px;
+    margin: 0px auto;
+    cursor: pointer;
+}

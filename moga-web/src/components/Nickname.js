@@ -53,7 +53,7 @@ function Nickname({ history, state }) {
                 fix
                 POST
             */
-            history.push("/timetable");
+            history.push('/main');
         }
     }
 

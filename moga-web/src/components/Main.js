@@ -1,12 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Header from './Header';
 
-function Timetable() {
+function Main() {
     return (
         <>
-            <h1>시간표</h1>
+            <Header></Header>
         </>
     );
 }
 
-export default withRouter(Timetable);
+export default withRouter(Main);
