@@ -10,20 +10,20 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 function Login() {
   // id, pw check
-  const onFinish = (values) => {    
-    if (values.userid && values.password != null) {
-      console.log('Received values of form: ', values);
-      openModal();  //일단 입력만 하면 모달창 뜨게 해놓음
-    }
+  const onFinish = (values) => {
+
+    /*
+      fix : 일단 입력만 하면 모달창 뜨게 해놓음. null 체크는 안해도 됨!
+      POST
+    */
+    console.log('Received values of form: ', values);
+    handleModal();  // modal open
   };
 
   // modal action
   const [modalState, setModalState] = useState(false);
-  const openModal = () => {
+  const handleModal = () => {
     setModalState(true);
-  }
-  const closeModal = () => {
-    setModalState(false);
   }
 
   return(
@@ -82,7 +82,7 @@ function Login() {
           <Button type="primary" htmlType="submit" className="login-form-button" size="large">
             LOGIN
           </Button>
-          <Nickname state={modalState} close={closeModal} />
+          <Nickname state={modalState} />
         </Form.Item>
       </Form>
     </>

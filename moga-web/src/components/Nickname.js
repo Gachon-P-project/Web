@@ -1,36 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import { Modal, Input, Button } from 'antd';
+import '../css/Nickname.css';
+import { Modal, Form, Input, Button } from 'antd';
 
-function Nickname({ history, state, close }) {
-    
-    const [nickname, setNickname] = useState('');   // 닉네임 값을 state로 정의
-    const [dupState, setDupState] = useState('none');   // 중복 메시지 display를 state로 정의
+function Nickname({ history, state }) {
+    const [form] = Form.useForm();
+    const [, forceUpdate] = useState();                     // 중복 확인 버튼 비활성화
+    const [checkState, setCheckState] = useState('none');   // 중복 체크 메시지 비활성화
+    const [impoState, setImpoState] = useState('none');       // 사용 불가능 메시지 비활성화
+    const [possState, setPossState] = useState('none');     // 사용 가능 메시지 비활성화
+    const [nickname, setNickname] = useState('');           // 닉네임 값을 state로 정의
 
-    // 입력한 닉네임으로 state 값 변경
-    const nickInput = (e) => {
-        setNickname(e.target.value);
-      }
+    useEffect(() => {
+        forceUpdate({});
+    }, []);
 
-    // 중복 검사
-    const duplicateChk = () => {
-        console.log('입력한 닉네임 : ' + nickname);
+    const handleInputChange = (e) => {
+        setNickname(e.target.value);    // 입력한 닉네임으로 state 값 변경
 
-        if (nickname != '') {
-            setDupState('block');   // 중복 메시지 활성화
-        }
+        // 입력 중엔 모든 메시지 비활성화
+        setImpoState('none');
+        setPossState('none');
+        setCheckState('none');
     }
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-    
+    // 중복 체크
+    const onFinish = (values) => {
+        console.log('중복 체크할 닉네임:', values);
+        setCheckState('none');
+
         /*
-          POST
+            fix : a일 때 중복이게 해놓음
+            POST
         */
-    
-        history.push("/timetable");
-      }
+
+        if (values.nickname === 'a') {  // 중복일 경우
+            setImpoState('block');      // 사용 불가능 메시지 활성화
+        } else {                        // 중복 아닐 경우
+            setPossState('block');      // 사용 가능 메시지 활성화
+        }
+    };
+
+    // 닉네임 추가 -> 메인화면으로 이동
+    const handleOkClick = (e) => {    
+        e.preventDefault();
+
+        if (checkState === 'none' && impoState === 'none' && possState === 'none') { // 중복 체크 했는지 확인
+            setCheckState('block');
+        } else if (possState === 'block') { // 사용 가능한 경우
+            /*
+                fix
+                POST
+            */
+            history.push("/timetable");
+        }
+    }
 
     return (
         state ?
@@ -38,19 +63,48 @@ function Nickname({ history, state, close }) {
             title="닉네임을 설정하세요."
             centered
             visible={state}
-            onOk={onSubmitHandler}
-            onCancel={close}
+            closable={false}
             width={350}
             footer={[
-                <Button key="submit" type="primary" onClick={onSubmitHandler}>
+                <Button key="submit" type="primary" onClick={handleOkClick}>
                     OK
-                </Button>,
+                </Button>
             ]}
             >
-                <Input value={nickname} onChange={nickInput} autoFocus required placeholder="닉네임 입력" size="large" />
-                <br/><br/>
-                <p style={{ color: 'red', display: dupState}}>이미 사용중인 닉네임입니다.</p>
-                <p>※ 닉네임은 변경이 가능합니다.</p>
+                <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
+                    <Form.Item
+                        name="nickname"
+                        rules={[
+                        {
+                            required: true,
+                            message: '닉네임을 입력해주세요!',
+                        },
+                        ]}
+                    >
+                        <Input autoFocus placeholder="닉네임" value={nickname} onChange={handleInputChange} className="nick-input"/>
+                    </Form.Item>
+                    <Form.Item shouldUpdate={true}>
+                        {() => (
+                        <Button
+                            htmlType="submit"
+                            className="dup-btn"
+                            disabled={
+                            !form.isFieldsTouched(true) ||
+                            form.getFieldsError().filter(({ errors }) => errors.length).length
+                            }
+                        >
+                            중복확인
+                        </Button>
+                        )}
+                    </Form.Item>
+                    <br/><br/>
+                    <Form.Item>
+                    <p style={{ color: 'red', display: checkState}}>중복 확인을 해주세요.</p>
+                        <p style={{ color: 'red', display: impoState}}>이미 사용중인 닉네임입니다.</p>
+                        <p style={{ color: '#1890ff', display: possState}}>사용 가능한 닉네임입니다.</p>
+                        <p>※ 닉네임은 변경이 가능합니다.</p>
+                    </Form.Item>
+                    </Form>
                 
         </Modal>
         : null

@@ -1,0 +1,28 @@
+@media screen and (max-width: 360px) {
+    .nick-input {
+        width: 175px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .nick-input {
+        width: 135px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .nick-input {
+        width: 96px;
+    }
+}
+
+.dup-btn {
+    border-color: #1890ff;
+    color: #1890ff;
+}
+
+.dup-btn:hover, .dup-btn:focus {
+    color: #fff;
+    background: #1890ff;
+    border-color: #1890ff;
+}
