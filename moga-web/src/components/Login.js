@@ -8,7 +8,7 @@ import logo from '../image/logo.png';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-function Login() {
+function Login(props) {
   // id, pw check
   const onFinish = (values) => {
 
@@ -17,7 +17,8 @@ function Login() {
       POST
     */
     console.log('Received values of form: ', values);
-    handleModal();  // modal open
+    handleModal();                // 닉네임 없는 경우 modal open
+    //props.history.push('/main');  // 닉네임 있는 경우 main 이동
   };
 
   // modal action
