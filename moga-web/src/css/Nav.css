@@ -1,0 +1,10 @@
+.nav {
+    background-color: #ffffff;
+    border-top: none;
+    width: 100%;
+    position: fixed;
+    top: 135px;
+    left: 0px;
+    z-index: 198;
+    text-align: center;
+}

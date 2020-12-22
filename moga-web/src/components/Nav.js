@@ -1,27 +1,52 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import '../css/Nav.css';
+import '../css/Content.css';
 import { Menu } from 'antd';
+import Home from './Home';
+import MajorBoard from './MajorBoard';
+import Notice from './Notice';
+import Timetable from './Timetable';
+
+const { SubMenu } = Menu;
+
+const obj = {
+    board: <Home />,
+    board_major: <MajorBoard />,
+    notice: <Notice />,
+    timetable: <Timetable />,
+};
 
 function Nav() {
+    const [current, setCurrent] = useState('board');
+    const handleClick = (e) => {
+    console.log('click ', e);
+        setCurrent(e.key);
+    };
+
     return(
-        <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-            <Menu.Item key="mail">
-                Navigation One
-            </Menu.Item>
-            <SubMenu key="SubMenu" title="Navigation Three - Submenu">
-                <Menu.ItemGroup title="Item 1">
-                    <Menu.Item key="setting:1">Option 1</Menu.Item>
-                    <Menu.Item key="setting:2">Option 2</Menu.Item>
-                </Menu.ItemGroup>
-                <Menu.ItemGroup title="Item 2">
-                    <Menu.Item key="setting:3">Option 3</Menu.Item>
-                    <Menu.Item key="setting:4">Option 4</Menu.Item>
-                </Menu.ItemGroup>
-            </SubMenu>
-        </Menu>
+        <>
+            <Menu mode="horizontal" className="nav" selectedKeys={[current]} onClick={handleClick}>
+                <SubMenu key="board" title="게시판">
+                    <Menu.Item key="board_major">학과 게시판</Menu.Item>
+                    <Menu.Item key="board_subject">수업 게시판</Menu.Item>
+                    <Menu.Item key="board_free">자유 게시판</Menu.Item>
+                    <Menu.Item key="board_hot">HOT 게시물</Menu.Item>
+                </SubMenu>
+                <Menu.Item key="notice">
+                    공지
+                </Menu.Item>
+                <Menu.Item key="timetable">
+                    시간표
+                </Menu.Item>
+            </Menu>
+            <div className="content-wrap">
+                <div className="content">
+                    {obj[current]}
+                </div>
+            </div>
+        </>
     );
 }
 
-export default withRouter(Nav);
+export default Nav;

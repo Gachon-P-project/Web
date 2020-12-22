@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 function Timetable() {
     return (
@@ -9,4 +8,4 @@ function Timetable() {
     );
 }
 
-export default withRouter(Timetable);
+export default Timetable;

@@ -20,14 +20,14 @@
 }
 
 .logo {
-  width: 70%;
+  width: 65%;
   display: block;
   margin: 0 auto;
 }
 
 .txt {
   color: #bdbdbd;
-  font-weight: bold;
+  font-weight: 800;
   text-align: center;
   margin-top: 10px;
 }
