@@ -1,6 +1,34 @@
+body {
+    background-color: #eeeeee;
+}
+
 .main {
-    /* background-color: #eeeeee; */
     min-width: 100%;
     min-height: 100%;
     position: absolute;
 }
+
+
+/* web version */
+
+    .web {
+        /* border: 1px solid olivedrab; */
+    }
+    .mobile {
+        /* border: 1px solid orangered; */
+        display: none;
+    }
+
+
+/* mobile version */
+
+    @media screen and (max-width: 480px) {
+        .web {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+        
+    }

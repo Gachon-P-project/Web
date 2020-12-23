@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Header from './Header';
-import Nav from './Nav';
+import NavWeb from './NavWeb';
+import NavMobile from './NavMobile';
 import Footer from './Footer';
 import '../css/Main.css';
 
@@ -9,7 +10,8 @@ function Main() {
     return (
         <div className="main">
             <Header />
-            <Nav />
+            <NavWeb/>
+            <NavMobile />
             <Footer />
         </div>
     );

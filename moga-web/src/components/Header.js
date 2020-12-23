@@ -9,7 +9,6 @@ function Header() {
         <div className="header">
             <div className="logoBox">
                 <img src={logo} alt="MOGA" className="header-logo" />
-                <div className="txt">가천인을 위한 커뮤니티, 모두의 가천</div>
             </div>
         </div>
     );

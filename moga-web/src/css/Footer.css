@@ -1,16 +1,40 @@
-.app-link {
-    background-color: #3F51B5;
-    width: 720px;
-    height: 70px;
-    margin: 10px auto 0;
-    cursor: pointer;
-    color: #ffffff;
-    text-align: center;
-    line-height: 70px;
-    font-size: 1.3em;
-}
-.footer {
-    color: #bdbdbd;
-    width: 720px;
-    margin: 60px auto 50px;
-}
+/* web version */
+
+    .footer-wrap {
+        width: 720px;
+        margin: 0 auto;
+    }
+
+    .app-link {
+        background-color: #3F51B5;
+        height: 70px;
+        margin-top: 10px;
+        cursor: pointer;
+        color: #ffffff;
+        text-align: center;
+        line-height: 70px;
+        font-size: 1.3em;
+    }
+    .footer {
+        color: #bdbdbd;
+        margin: 60px 0 50px;
+    }
+
+
+/* mobile version */
+
+    @media screen and (max-width: 480px) {
+        .footer-wrap {
+            width: 100%;
+        }
+
+        .app-link {
+            height: 60px;
+            line-height: 60px;
+            font-size: 1em;
+        }
+
+        .footer {
+            margin: 30px 0 50px 15px;
+        }
+    }

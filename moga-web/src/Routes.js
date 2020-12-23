@@ -14,6 +14,5 @@ function Routes() {
         </Router>
     );
 }
-// Test Git
 
 export default Routes;
