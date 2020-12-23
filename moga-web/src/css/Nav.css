@@ -7,4 +7,14 @@
     left: 0px;
     z-index: 198;
     text-align: center;
+    font-size: 1.3em;
+}
+
+.ant-menu-submenu-title .anticon {
+    font-size: 1em;
+    margin: 0 auto;
+}
+
+.mypage {
+    border: 1px solid black;
 }

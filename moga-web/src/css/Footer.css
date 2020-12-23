@@ -1,0 +1,16 @@
+.app-link {
+    background-color: #3F51B5;
+    width: 720px;
+    height: 70px;
+    margin: 10px auto 0;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
+    line-height: 70px;
+    font-size: 1.3em;
+}
+.footer {
+    color: #bdbdbd;
+    width: 720px;
+    margin: 60px auto 50px;
+}
