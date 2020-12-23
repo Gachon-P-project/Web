@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Home() {
+function Board() {
     return (
         <>
             <h1>게시판 4개 보여줄거임</h1>
@@ -15,4 +15,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Board;
