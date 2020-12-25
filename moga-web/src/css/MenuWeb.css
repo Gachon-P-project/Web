@@ -1,0 +1,71 @@
+/* *
+    web version menu in header
+
+*/
+
+.mw {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.mw-item {
+    float: left;
+    margin: 0 30px;
+    font-size: 1.2em;
+    line-height: 77px;
+}
+
+.mw-item > a {
+    border-bottom: 3px solid transparent;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: border-bottom 1s;
+    transition: border-bottom 1s;
+}
+
+.mw-item > a:hover {
+    border-bottom: 3px solid #1890ff;
+    color: #1890ff;
+}
+
+/* dropdown menu */
+
+    .mw-dropdown {
+        overflow: hidden;
+    }
+
+    .mw-dropdown-content {
+        line-height: 20px;
+        font-size: 14px;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        top: 85px;
+        z-index: 200;
+        
+        /* dropdown menu close */
+        max-height: 0px;
+        overflow: hidden;
+        
+        /* open animation */
+        -webkit-transition: max-height 0.4s linear;
+        -moz-transition: max-height 0.4s linear;
+        transition: max-height 0.4s linear;
+    }
+
+    .mw-dropdown-item > a {
+        display: block;
+        padding: 12px 16px;
+        color: #333;
+    }
+
+    .mw-dropdown-item > a:hover {
+        color: #1890ff;
+    }
+
+    .mw-dropdown:hover .mw-dropdown-content {
+        /* dropdown menu open */
+        max-height: 200px;
+    }

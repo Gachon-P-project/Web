@@ -8,7 +8,7 @@ function Nickname({ history, state }) {
     const [form] = Form.useForm();
     const [, forceUpdate] = useState();                     // 중복 확인 버튼 비활성화
     const [checkState, setCheckState] = useState('none');   // 중복 체크 메시지 비활성화
-    const [impoState, setImpoState] = useState('none');       // 사용 불가능 메시지 비활성화
+    const [impoState, setImpoState] = useState('none');     // 사용 불가능 메시지 비활성화
     const [possState, setPossState] = useState('none');     // 사용 가능 메시지 비활성화
     const [nickname, setNickname] = useState('');           // 닉네임 값을 state로 정의
 
@@ -63,7 +63,7 @@ function Nickname({ history, state }) {
             title="닉네임을 설정하세요."
             centered
             visible={state}
-            closable={false}
+            closable={false} // x 버튼 비활성화
             width={350}
             footer={[
                 <Button key="submit" type="primary" onClick={handleOkClick}>

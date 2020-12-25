@@ -1,6 +1,6 @@
-body {
-    background-color: #eeeeee;
-}
+/* body {
+    background-color: #f3f3f4;
+} */
 
 .main {
     min-width: 100%;
@@ -11,9 +11,10 @@ body {
 
 /* web version */
 
-    .web {
-        /* border: 1px solid olivedrab; */
-    }
+    /* .web {
+        border: 1px solid olivedrab;
+    } */
+    
     .mobile {
         /* border: 1px solid orangered; */
         display: none;
@@ -22,7 +23,7 @@ body {
 
 /* mobile version */
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 736px) {
         .web {
             display: none;
         }

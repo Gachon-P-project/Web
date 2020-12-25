@@ -1,0 +1,64 @@
+/* *
+    right menu in header
+
+*/
+
+
+/* web version */
+
+    .right-box {
+        display: inline-block;
+        position: absolute;
+        right: 15%;
+        line-height: 80px;
+    }
+    .right-item {
+        float: left;
+    }
+
+    .notification {
+        cursor: pointer;
+        color: #686a6d;
+        background-color: #ffffff;
+    }
+    .user {
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+
+/* tablet version */
+
+    @media screen and (max-width: 980px) {
+        .right-box {
+            right: 5%;
+        }
+    }
+
+
+/* mobile version */
+
+    @media screen and (max-width: 736px) {
+
+        /* rightbox */
+
+            .right-box {
+                right: 4%;
+                line-height: 60px;
+            }
+
+            .notification {
+                color: #9e9e9e;
+                background-color: #ffffff;
+            }
+            
+            .user {
+                margin-left: 5px;
+                color: #9e9e9e;
+                background-color: #ffffff;
+            }
+
+            .ant-avatar.ant-avatar-icon.user {
+                font-size: 18px;
+            }
+    }
