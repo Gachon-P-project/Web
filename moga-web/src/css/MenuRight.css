@@ -43,23 +43,35 @@
         /* rightbox */
 
             .right-box {
-                right: 4%;
+                right: 3%;
                 line-height: 60px;
             }
+
+
+            /* notification */
 
             .notification {
                 color: #9e9e9e;
                 background-color: #ffffff;
             }
+
+            .ant-avatar.notification {
+                font-size: 18px;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+            }
             
+            
+            /* user */
+
             .user {
                 margin-left: 5px;
                 color: #9e9e9e;
                 background-color: #ffffff;
             }
-            
-            .ant-avatar.notification {
-                font-size: 18px;
+
+            .ant-avatar.user {
                 width: 32px;
                 height: 32px;
                 line-height: 32px;

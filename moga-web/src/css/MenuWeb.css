@@ -29,6 +29,11 @@
     color: #1890ff;
 }
 
+.mw-item-active > a {
+    border-bottom: 3px solid #1890ff;
+    color: #1890ff;
+}
+
 /* dropdown menu */
 
     .mw-dropdown {
@@ -62,6 +67,10 @@
     }
 
     .mw-dropdown-item > a:hover {
+        color: #1890ff;
+    }
+
+    .mw-dropdown-item-active > a {
         color: #1890ff;
     }
 

@@ -59,6 +59,8 @@ function MenuMobile(props) {
                 defaultOpenKeys={['board']}     //열어둘 서브메뉴
                 mode="inline"
                 >
+                
+                {/* dropdown */}
                 <SubMenu key="board" title="게시판" className="bold">
                     <Menu.Item key="/main">전체 게시판</Menu.Item>
                     <Menu.Item key="/main/board/major">학과 게시판</Menu.Item>
@@ -66,9 +68,12 @@ function MenuMobile(props) {
                     <Menu.Item key="/main/board/free">자유 게시판</Menu.Item>
                     <Menu.Item key="/main/board/hot">HOT 게시물</Menu.Item>
                 </SubMenu>
+
+                {/* default menu - font weight bold */}
                 <Menu.Item key="/main/notice" className="bold">공지사항</Menu.Item>
                 <Menu.Item key="/main/timetable" className="bold">시간표</Menu.Item>
 
+                {/* default menu */}
                 <Menu.Item key="/main/guide">이용안내</Menu.Item>
                 <Menu.Item key="/main/consult">문의하기</Menu.Item>
             </Menu>
