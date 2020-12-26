@@ -57,6 +57,13 @@
                 color: #9e9e9e;
                 background-color: #ffffff;
             }
+            
+            .ant-avatar.notification {
+                font-size: 18px;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+            }
 
             .ant-avatar.ant-avatar-icon.user {
                 font-size: 18px;

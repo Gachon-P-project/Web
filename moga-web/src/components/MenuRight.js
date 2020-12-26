@@ -15,7 +15,7 @@ function MenuRight() {
             <div className="right-item">
                 <span className="avatar-item">
                     <Badge count={1}>
-                        <Avatar className="notification" icon={<BellOutlined />} />
+                        <Avatar className="notification" size="large" icon={<BellOutlined />} />
                     </Badge>
                 </span>
             </div>
