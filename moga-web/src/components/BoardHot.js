@@ -6,7 +6,7 @@ import HeaderMobile from './HeaderMobile';
 import '../css/Main.css';
 import '../css/Content.css';
 
-function Notice() {
+function BoardHOT() {
     return (
         <div className="main">
 
@@ -14,12 +14,11 @@ function Notice() {
             <HeaderMobile />
 
             <div className="content">
-                <h1>공지사항</h1>
-                <div>테이블? 아코디언?</div>
+                <h1>HOT 게시물</h1>
             </div>
 
         </div>
     );
 }
 
-export default withRouter(Notice);
+export default withRouter(BoardHOT);
