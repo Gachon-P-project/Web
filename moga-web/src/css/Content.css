@@ -4,9 +4,17 @@
         width: 720px;
         height: 100%;
         background-color: #ffffff;
-        border: 1px solid #e3e3e3;
+        /* border: 1px solid #e3e3e3; */
         margin: 100px auto 0;
+        /* padding: 20px; */
     }
+
+    /* .heading {
+        font-size: 2em;
+        color: #333333;
+        margin-bottom: 20px;
+    } */
+
 
 
 

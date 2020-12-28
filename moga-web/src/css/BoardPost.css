@@ -1,0 +1,61 @@
+.post {
+    min-height: 78px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.post:not(:last-child) {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.post > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.title {
+    font-size: 1.3em;
+    max-height: 28px;
+    overflow: hidden;
+}
+
+.contents {
+    margin: 5px 0;
+    max-height: 22px;
+    overflow: hidden;
+    color: #757575;
+}
+
+time {
+    font-size: 0.8em;
+    float: left;
+    color: #9e9e9e;
+}
+
+.writer {
+    font-size: 0.8em;
+    color: #9e9e9e;
+    float: left;
+}
+
+.status {
+    float: right;
+}
+
+.like {
+    font-size: 0.8em;
+    color: #c62917;
+    float: left;
+    margin-right: 10px;
+}
+
+.reply {
+    font-size: 0.8em;
+    color: #0288D1;
+    float: left;
+}
+
+.post:hover {
+    background-color: #f3f3f3;
+}

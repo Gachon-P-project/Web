@@ -8,7 +8,7 @@ function Footer() {
 
     return (
         <div className="footer-wrap">  
-            <div className="app-link"><span className="bold">MOGA</span> 앱으로 보기 <RightOutlined /></div>
+            {/* <div className="app-link"><span className="bold">MOGA</span> 앱으로 보기 <RightOutlined /></div> */}
             <div className="footer">
                 <div>&copy; {today.getFullYear()}. MOGA. All rights reserved.</div>
             </div>
