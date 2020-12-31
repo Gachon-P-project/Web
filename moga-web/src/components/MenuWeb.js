@@ -1,5 +1,5 @@
 /* *
-    web version menu in header
+    Web version menu in header
     
 */
 
@@ -10,15 +10,12 @@ import MenuWebDropdown from './MenuWebDropdown';
 
 function MenuWeb() {
     return(
-        <div className="mw">
-            <div className="mw-wrap">
-                <MenuWebDropdown link="/main" name="게시판" /> {/* 상위 메뉴 링크, 이름 */}
-                <MenuWebDefault />
-            </div>
-        </div>
+        <ul className="mw">
+            <MenuWebDropdown link="/main" name="게시판" />
+            <MenuWebDefault link="/main/notice" name="공지사항" />
+            <MenuWebDefault link="/main/timetable" name="시간표" />
+        </ul>
     );
-    
 }
 
 export default MenuWeb;
-

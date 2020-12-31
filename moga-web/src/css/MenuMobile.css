@@ -5,7 +5,7 @@
 
     /* menu button */
 
-    .menu-btn {
+    .mm-btn {
         position: absolute;
         left: 5%;
         line-height: 60px;
@@ -26,6 +26,6 @@
 
     /* menu in drawer*/
 
-    .menu {
+    .mm {
         border: none;
     }

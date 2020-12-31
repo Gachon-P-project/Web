@@ -30,17 +30,25 @@ function MenuMobile(props) {
         setDrawerState(false);
     }
 
+    // 수업 게시판 하위 메뉴
+    const subjectItems = [
+        {link: '/main/board/subject/컴퓨터구조/이상순/201739423', name: '컴퓨터구조'},
+        {link: '/main/board/subject/컴퓨터공학개론/김진영/201739412', name: '컴퓨터공학개론'},
+        {link: '/main/board/subject/모바일웹/최진우/201739416', name: '모바일웹'}
+    ];
+
     // page change action
-    const current = window.location.pathname;
+    const current = decodeURI(window.location.pathname);
     const handleMenuClick = (e) => {
         props.history.push(e.key);
+        window.location.reload();
     };
 
     return(
         <>
         {/* menu button */}
-        <div className="menu-btn" onClick={openDrawer} style={{ display: openState }}><MenuOutlined /></div>
-        <div className="menu-btn menu-btn-close" onClick={closeDrawer} style={{ display: closeState }}><CloseOutlined /></div>
+        <div className="mm-btn" onClick={openDrawer} style={{ display: openState }}><MenuOutlined /></div>
+        <div className="mm-btn mm-btn-close" onClick={closeDrawer} style={{ display: closeState }}><CloseOutlined /></div>
 
         {/* menu wrap */}
         <Drawer
@@ -53,7 +61,7 @@ function MenuMobile(props) {
                 
             {/* menu */}
             <Menu
-                className="menu"
+                className="mm"
                 onClick={handleMenuClick}
                 defaultSelectedKeys={[current]} //최초 선택되는 메뉴
                 defaultOpenKeys={['board']}     //열어둘 서브메뉴
@@ -64,7 +72,11 @@ function MenuMobile(props) {
                 <SubMenu key="board" title="게시판" className="bold">
                     <Menu.Item key="/main">전체 게시판</Menu.Item>
                     <Menu.Item key="/main/board/major">학과 게시판</Menu.Item>
-                    <Menu.Item key="/main/board/subject">수업 게시판</Menu.Item>
+                    <SubMenu key="subject" title="수업 게시판">
+                        {subjectItems.map((subjectItem) =>
+                            <Menu.Item key={subjectItem.link}>{subjectItem.name}</Menu.Item>
+                        )}
+                    </SubMenu>
                     <Menu.Item key="/main/board/free">자유 게시판</Menu.Item>
                     <Menu.Item key="/main/board/hot">HOT 게시물</Menu.Item>
                 </SubMenu>
