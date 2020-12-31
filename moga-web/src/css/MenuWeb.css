@@ -111,3 +111,15 @@
 .mw-dropdown-item-active > a, .mw-sub-item-active > a, .mw-dropdown-item-active .mw-sub-icon {
     color: #1890ff;
 }
+
+/* Simple clearfix */
+
+.mw:before, .mw-dropdown:before, .mw-sub:before,
+.mw:after, .mw-dropdown:after, .mw-sub:after {
+    content: " ";
+    display: block;
+}
+
+.mw:after, .mw-dropdown:after, .mw-sub:after {
+    clear: both;
+}

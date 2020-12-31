@@ -8,15 +8,15 @@ function BoardPost(props) {
     return (
         <div className="post">
             <Link to={props.link}>
-                <div className="title">{props.title}</div>
-                <div className="contents">{props.contents}</div>
+                <div className="post-title">{props.title}</div>
+                <div className="post0contents">{props.contents}</div>
                 
-                <time dateTime={props.time}>{props.time}&nbsp;|</time>
-                <div className="writer">&nbsp;{props.writer}</div>
+                <div className="post-time">{props.time}&nbsp;|</div>
+                <div className="post-writer">&nbsp;{props.writer}</div>
             
-                <div className="status">
-                    <div className="like"><LikeOutlined /> {props.like}</div>
-                    <div className="reply"><MessageOutlined /> {props.reply}</div>
+                <div className="post-status">
+                    <div className="post-like"><LikeOutlined /> {props.like}</div>
+                    <div className="post-reply"><MessageOutlined /> {props.reply}</div>
                 </div>
             </Link>
         </div>

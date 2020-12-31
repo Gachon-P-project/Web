@@ -14,43 +14,43 @@
     color: #000000;
 }
 
-.title {
+.post-title {
     font-size: 1.3em;
     max-height: 28px;
     overflow: hidden;
 }
 
-.contents {
+.post-contents {
     margin: 5px 0;
     max-height: 22px;
     overflow: hidden;
     color: #757575;
 }
 
-time {
+.post-time {
     font-size: 0.8em;
     float: left;
     color: #9e9e9e;
 }
 
-.writer {
+.post-writer {
     font-size: 0.8em;
     color: #9e9e9e;
     float: left;
 }
 
-.status {
+.post-status {
     float: right;
 }
 
-.like {
+.post-like {
     font-size: 0.8em;
     color: #c62917;
     float: left;
     margin-right: 10px;
 }
 
-.reply {
+.post-reply {
     font-size: 0.8em;
     color: #0288D1;
     float: left;

@@ -38,6 +38,6 @@ function DropdownItem({ dropItem }) {
             <Link to={dropItem.link}>{dropItem.name}</Link>
         </li>
     );
-  }
+}
 
 export default MenuWebDropdown;
