@@ -15,7 +15,7 @@ function HeaderWeb() {
 
     return(
         <>
-        <div className="header web">
+        <div className="header">
 
             {/* logo */}
             <div className="logo-wrap">

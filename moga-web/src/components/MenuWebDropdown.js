@@ -11,7 +11,7 @@ function MenuWebDropdown(props) {
     const dropItems = [
         {link: '/main/board/major', name: '학과 게시판'},
         {link: '/main/board/free', name: '자유 게시판'},
-        {link: '/main/board/hot', name: 'HOT 게시물'}
+        {link: '/main/board/hot', name: 'HOT 게시판'}
     ];
 
     const current = window.location.pathname;

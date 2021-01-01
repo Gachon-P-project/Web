@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import useWindowSize from './useWindowSize';
 import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
 import BoardPost from './BoardPost';
@@ -17,11 +18,19 @@ function BoardMajor() {
         {link: '', title: '학과 게시물 제목3', contents: '학과 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
+    const width = useWindowSize();
+
+    let header;
+    if (width > 736) {
+        header = <HeaderWeb />;
+    } else {
+        header = <HeaderMobile />;
+    }
+
     return (
         <div className="main">
 
-            <HeaderWeb />
-            <HeaderMobile />
+            {header}
 
             <div className="content">
                 {/* breadcrumb */}

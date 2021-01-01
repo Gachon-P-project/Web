@@ -15,7 +15,7 @@ function HeaderMobile() {
 
     return(
         <>
-        <div className="header mobile">
+        <div className="header">
 
             {/* menu */}
             <MenuMobile />

@@ -78,7 +78,7 @@ function MenuMobile(props) {
                         )}
                     </SubMenu>
                     <Menu.Item key="/main/board/free">자유 게시판</Menu.Item>
-                    <Menu.Item key="/main/board/hot">HOT 게시물</Menu.Item>
+                    <Menu.Item key="/main/board/hot">HOT 게시판</Menu.Item>
                 </SubMenu>
 
                 {/* default menu - font weight bold */}

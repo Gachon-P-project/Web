@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Footer.css';
 import 'antd/dist/antd.css';
-import { RightOutlined  } from '@ant-design/icons';
+// import { RightOutlined  } from '@ant-design/icons';
 
 function Footer() {
     const today = new Date();
