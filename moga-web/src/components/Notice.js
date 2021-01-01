@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import useWindowSize from './useWindowSize';
 import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
+import Breadcrumb from './Breadcrumb';
 import Footer from './Footer';
 import '../css/Main.css';
 import '../css/Content.css';
@@ -23,8 +24,8 @@ function Notice() {
             {header}
 
             <div className="content">
-                <h1>공지사항</h1>
-                <div>테이블? 아코디언?</div>
+                {/* breadcrumb */}
+                <Breadcrumb link="/notice" name="공지사항" />
             </div>
 
             <Footer />

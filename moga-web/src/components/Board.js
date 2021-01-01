@@ -5,7 +5,7 @@ import {  LikeOutlined, MessageOutlined } from '@ant-design/icons';
 import '../css/Content.css';
 import '../css/Board.css';
 
-const boardLists = [
+const boardListItems = [
     {link: '/main/board/major', name: '학과 게시판'},
     {link: '/main/board/free', name: '자유 게시판'},
     {link: '#', name: '수업 게시판'},
@@ -50,24 +50,23 @@ for (let i = 0; i < parseInt((subjectData.length)/2) ; i++) {
     subjectOdd.push(subjectData[i*2+1]);
 }
 
-function BoardList({ boardList }) {
+function BoardListItem({ boardListItem }) {
     return (
-        <div className="board-title bold"><Link to={boardList.link}>{boardList.name}</Link></div>
+        <div className="board-title bold"><Link to={boardListItem.link}>{boardListItem.name}</Link></div>
     );
 }
 
 function Board() {
     
     return (
-        <div className="content board-wrap">
-            <Row>
+        <div className="content">
+            <Row className="board-wrap">
                 <Col span={16}>
                     <Row>
                         <Col span={12}>
-                            {/* 학과 게시판 */}
                             <List
                                 className="board-list"
-                                header={<BoardList boardList={boardLists[0]} />}
+                                header={<BoardListItem boardListItem={boardListItems[0]} />}
                                 bordered
                                 dataSource={majorData}
                                 renderItem={item => (
@@ -84,7 +83,7 @@ function Board() {
                             {/* 자유 게시판 */}
                             <List
                                 className="board-list"
-                                header={<BoardList boardList={boardLists[1]} />}
+                                header={<BoardListItem boardListItem={boardListItems[1]} />}
                                 bordered
                                 dataSource={freeData}
                                 renderItem={item => (
@@ -101,7 +100,7 @@ function Board() {
                     {/* 수업 게시판 */}
                     <List
                         className="board-list"
-                        header={<BoardList boardList={boardLists[2]} />}
+                        header={<BoardListItem boardListItem={boardListItems[2]} />}
                         bordered   
                     >
                         <Row>
@@ -132,7 +131,7 @@ function Board() {
                     {/* HOT 게시물 */}
                     <List
                         className="board-list"
-                        header={<BoardList boardList={boardLists[3]} />}
+                        header={<BoardListItem boardListItem={boardListItems[3]} />}
                         bordered
                         dataSource={hotData}
                         renderItem={item => (

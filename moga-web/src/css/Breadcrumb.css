@@ -1,5 +1,27 @@
-/* breadcrumb */
-
-.ant-breadcrumb {
+.breadcrumb {
     padding: 20px;
+}
+
+.breadcrumb-link > a {
+    text-decoration: none;
+    color: #9e9e9e;
+}
+
+.breadcrumb-link > a:hover {
+    color: #1890ff;
+}
+
+.breadcrumb-separator {
+    color: #9e9e9e;
+    margin: 0 8px;
+}
+
+.breadcrumb > span:last-child .breadcrumb-link > a {
+    pointer-events: none;
+    color: #333333;
+    font-weight: 700;
+}
+
+.breadcrumb > span:last-child .breadcrumb-separator {
+    display: none;
 }

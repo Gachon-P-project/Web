@@ -9,7 +9,10 @@
 
 .board-title > a {
     text-decoration: none;
-    color: #333333;
+    color: #303f9f;
+    /* #303f9f */
+    /* #3f51b5 */
+    /* #333333 */
 }
 
 .board-data-time {
@@ -50,4 +53,10 @@
 
 .ant-list-item > a:hover {
     background-color: #f3f3f3;
+}
+
+
+/* BoardList2 */
+.board-data-mf {
+    margin-left: 15px;
 }

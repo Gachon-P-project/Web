@@ -41,7 +41,7 @@ function MenuMobile(props) {
     const current = decodeURI(window.location.pathname);
     const handleMenuClick = (e) => {
         props.history.push(e.key);
-        window.location.reload();
+        closeDrawer();
     };
 
     return(

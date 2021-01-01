@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import useWindowSize from './useWindowSize';
 import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
+import Breadcrumb from './Breadcrumb';
 import Footer from './Footer';
 import '../css/Main.css';
 import '../css/Content.css';
@@ -23,8 +24,8 @@ function Timetable() {
             {header}
 
             <div className="content">
-                <h1>시간표</h1>
-                <div>라이브러리 찾기</div>
+                {/* breadcrumb */}
+                <Breadcrumb link="/timetable" name="시간표" />
             </div>
 
             <Footer />

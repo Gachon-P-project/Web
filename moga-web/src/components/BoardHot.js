@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import useWindowSize from './useWindowSize';
 import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
+import Breadcrumb from './Breadcrumb';
 import BoardPost from './BoardPost';
 import Footer from './Footer';
-import { Breadcrumb } from 'antd';
-import { HomeOutlined } from '@ant-design/icons';
 import '../css/Main.css';
 import '../css/Content.css';
 import '../css/Breadcrumb.css';
@@ -35,15 +34,7 @@ function BoardHOT() {
 
             <div className="content">
                 {/* breadcrumb */}
-                <Breadcrumb>
-                    <Breadcrumb.Item>
-                        <Link to="/main"><HomeOutlined /></Link>
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>
-                        <Link to="/main">게시판</Link>
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item className="bold">HOT 게시판</Breadcrumb.Item>
-                </Breadcrumb>
+                <Breadcrumb link="/main, /main/board/hot" name="게시판, HOT 게시판" />
 
                 {/* post */}
                 {postItems.map((postItem, i) =>

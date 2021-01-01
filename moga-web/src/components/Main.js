@@ -5,6 +5,7 @@ import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
 import Footer from './Footer';
 import Board from './Board';
+import BoardList2 from './BoardList2';
 import '../css/Main.css';
 
 function Main() {
@@ -12,16 +13,19 @@ function Main() {
     // console.log('Window size: ', {width});
 
     let header;
+    let boardList;
     if (width > 736) {
         header = <HeaderWeb />;
+        boardList = <Board />;
     } else {
         header = <HeaderMobile />;
+        boardList = <BoardList2 />;
     }
 
     return(
         <div className="main">
             {header}
-            <Board />
+            {boardList}
             <Footer />
         </div>
     );
