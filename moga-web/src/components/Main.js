@@ -4,8 +4,8 @@ import useWindowSize from './useWindowSize';
 import HeaderWeb from './HeaderWeb';
 import HeaderMobile from './HeaderMobile';
 import Footer from './Footer';
-import Board from './Board';
-import BoardList2 from './BoardList2';
+import MainBoardWeb from './MainBoardWeb';
+import MainBoardMobile from './MainBoardMobile';
 import '../css/Main.css';
 
 function Main() {
@@ -13,19 +13,20 @@ function Main() {
     // console.log('Window size: ', {width});
 
     let header;
-    let boardList;
+    let mainBoard;
+
     if (width > 736) {
         header = <HeaderWeb />;
-        boardList = <Board />;
+        mainBoard = <MainBoardWeb />;
     } else {
         header = <HeaderMobile />;
-        boardList = <BoardList2 />;
+        mainBoard = <MainBoardMobile />;
     }
 
     return(
         <div className="main">
             {header}
-            {boardList}
+            {mainBoard}
             <Footer />
         </div>
     );

@@ -1,0 +1,99 @@
+.board-wrap {
+    background-color: #f9f9fb;
+}
+
+.board-list {
+    background-color: #ffffff;
+}
+
+.board-name {
+    color: #303f9f;
+}
+
+.board-name > a {
+    text-decoration: none;
+    color: #303f9f;
+    /* #303f9f */
+    /* #3f51b5 */
+    /* #333333 */
+}
+
+.board-data-title {
+    max-height: 22px;
+    overflow: hidden;
+}
+
+.board-data-time {
+    font-size: 0.8em;
+    color: #9e9e9e;
+    display: inline-block;
+}
+
+.board-data-status {
+    font-size: 0.8em;
+    float: right;
+    margin-top: 3.5px;
+}
+
+.board-data-like {
+    color: #c62917;
+    margin-right: 10px;
+}
+
+.board-data-reply {
+    color: #0288D1;
+}
+
+.board-list .board-data {
+    padding: 0;
+    display: block;
+}
+
+/* MainBoardSubject - grid 사용 시 */
+/* .ant-list-grid .ant-col > .board-data {
+    margin: 0;
+} */
+
+.board-data > a {
+    text-decoration: none;
+    color: #333333;
+    display: block;
+    padding: 12px 24px;
+}
+
+.board-data > a:hover {
+    background-color: #f3f3f3;
+}
+
+
+/* BoardMobile */
+
+.board-mobile {
+    max-height: 22px;
+    overflow: hidden;
+}
+
+.board-mobile-data {
+    margin-left: 15px;
+}
+
+.board-mobile-data > .anticon {
+    margin-right: 5px;
+}
+
+.board-mobile-data-empty {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+
+/* mobile version */
+
+    @media screen and (max-width: 736px) {
+        .board-wrap {
+            padding: 0 10px;
+        }
+
+        .board-list:nth-child(2) {
+            margin: 10px 0;
+        }
+    }

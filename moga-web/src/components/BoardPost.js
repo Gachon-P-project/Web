@@ -9,7 +9,7 @@ function BoardPost(props) {
         <div className="post">
             <Link to={props.link}>
                 <div className="post-title">{props.title}</div>
-                <div className="post0contents">{props.contents}</div>
+                <div className="post-contents">{props.contents}</div>
                 
                 <div className="post-time">{props.time}&nbsp;|</div>
                 <div className="post-writer">&nbsp;{props.writer}</div>
