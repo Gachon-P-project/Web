@@ -1,14 +1,13 @@
-/* *
-    mobile version menu in header
-    
-*/
+/**
+ * mobile version menu in header
+ */
 
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import '../css/MenuMobile.css';
-import 'antd/dist/antd.css';
 import { Drawer, Menu } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
+import '../css/MenuMobile.css';
 
 const { SubMenu } = Menu;
 
@@ -30,7 +29,10 @@ function MenuMobile(props) {
         setDrawerState(false);
     }
 
-    // 수업 게시판 하위 메뉴
+    /*
+        fix : 수강 중인 수업 전체 조회
+    */
+    // 수업 게시판 하위 메뉴 구성
     const subjectItems = [
         {link: '/main/board/subject/컴퓨터구조/이상순/201739423', name: '컴퓨터구조'},
         {link: '/main/board/subject/컴퓨터공학개론/김진영/201739412', name: '컴퓨터공학개론'},
@@ -87,7 +89,7 @@ function MenuMobile(props) {
 
                 {/* default menu */}
                 <Menu.Item key="/main/guide">이용안내</Menu.Item>
-                <Menu.Item key="/main/consult">문의하기</Menu.Item>
+                <Menu.Item key="/main/issue">문의하기</Menu.Item>
             </Menu>
         </Drawer>
         </>

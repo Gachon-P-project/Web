@@ -1,12 +1,11 @@
-/* *
-    Web version menu in header
-    
-*/
+/**
+ * Web version menu in header
+ */
 
 import React from 'react';
-import '../css/MenuWeb.css';
 import MenuWebDefault from './MenuWebDefault';
 import MenuWebDropdown from './MenuWebDropdown';
+import '../css/MenuWeb.css';
 
 function MenuWeb() {
     return(

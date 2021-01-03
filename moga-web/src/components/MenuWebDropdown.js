@@ -1,7 +1,6 @@
-/* *
-    Dropdown menu with sub-menu of web version menu
-    
-*/
+/**
+ * Dropdown menu with sub-menu of web version menu
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';

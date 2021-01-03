@@ -1,13 +1,12 @@
-/* *
-    right menu in header
-
-*/
+/**
+ * right menu in header
+ */
 
 import React from 'react';
-import '../css/MenuRight.css';
-import 'antd/dist/antd.css';
 import { Avatar, Badge } from 'antd';
 import { UserOutlined, BellOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
+import '../css/MenuRight.css';
 
 function MenuRight() {
     return(

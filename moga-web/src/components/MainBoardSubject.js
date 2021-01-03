@@ -1,7 +1,6 @@
-/* *
-    subject board in main
-    
-*/
+/**
+ * subject board in main
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,7 @@ import { ConfigProvider, List, Row, Col } from 'antd';
 import EmptyData from './EmptyData';
 
 /*
-    fix : 수업 조회
+    fix : 수강 중인 수업 전체 조회
 */
 const subjectData = [
     {link: '/main/board/subject/컴퓨터구조/이상순/201739423', name: '컴퓨터구조'},
@@ -55,13 +54,12 @@ function MainBoardSubject() {
                     <List
                         dataSource={subjectData}
                         renderItem={(item, i) => (
-                            (i%2 === 0) ?
+                            (i%2 === 0) &&
                             <List.Item className="board-data">
                                 <Link to={item.link}>
                                     <div className="board-data-title">{item.name}</div>
                                 </Link>
                             </List.Item>
-                            : <></>
                         )}
                     />
                 </Col>
@@ -69,7 +67,7 @@ function MainBoardSubject() {
                     <List
                         dataSource={subjectData}
                         renderItem={(item, i) => (
-                            (i%2 === 0) ? <></> :
+                            (i%2 !== 0) &&
                             <List.Item className="board-data" style={{ borderBottom: '1px solid #f0f0f0' }}>
                                 <Link to={item.link}>
                                     <div className="board-data-title">{item.name}</div>

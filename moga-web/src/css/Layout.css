@@ -1,0 +1,29 @@
+body {
+    background-color: #F9F9FB;
+}
+
+.layout {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+
+
+/* web version */
+
+.content {
+    width: 720px;
+    height: 100%;
+    background-color: #ffffff;
+    margin: 100px auto 0;
+}
+
+
+/* mobile version */
+
+@media screen and (max-width: 736px) {
+    .content {
+        width: 100%;
+        margin: 70px auto 0;
+    }
+}

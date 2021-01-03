@@ -1,12 +1,16 @@
-/* *
-    Sub menu in dropdown of web version menu
-*/
+/**
+ * Sub menu in dropdown of web version menu
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RightOutlined } from '@ant-design/icons';
 
 function MenuWebDropSub(props) {
+    /*
+        fix : 수강 중인 수업 전체 조회
+    */
+    // 수업 게시판 하위 메뉴 구성
     const subItems = [
         {link: '/main/board/subject/컴퓨터구조/이상순/201739423', name: '컴퓨터구조'},
         {link: '/main/board/subject/컴퓨터공학개론/김진영/201739412', name: '컴퓨터공학개론'},

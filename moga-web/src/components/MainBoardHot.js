@@ -1,7 +1,6 @@
-/* *
-    hot board in main
-    
-*/
+/**
+ * hot board in main
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ import { LikeOutlined, MessageOutlined } from '@ant-design/icons';
 import EmptyData from './EmptyData';
 
 /*
-    fix : hot 게시글 조회
+    fix : hot 게시물 조회 (5개)
 */
 const hotData = [
     {link: '#', title: 'hot 게시물 제목1', time: '방금', like: 20, reply: 4},
@@ -31,7 +30,7 @@ function MainBoardHot() {
         <ConfigProvider renderEmpty={Empty}>
             <List
                 className="board-list"
-                header={<div className="board-name bold"><Link to="/main/board/hot">HOT 게시판</Link></div>}
+                header={<div className="board-name bold"><Link to="/main/board/hot">HOT 게시물</Link></div>}
                 bordered
                 dataSource={hotData}
                 locale={{}}

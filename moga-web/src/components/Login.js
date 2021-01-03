@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Form, Input, Button, Checkbox } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import background from '../image/gachon.png';
+import logo from '../image/logo.png';
 import Nickname from './Nickname';
 import 'antd/dist/antd.css';
 import '../css/Login.css';
-import background from '../image/gachon.png';
-import logo from '../image/logo.png';
-import { Form, Input, Button, Checkbox } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 function Login(props) {
+  /*
+    fix : 로그인 상태 유지
+  */
+
   // id, pw check
   const onFinish = (values) => {
 
     /*
       fix : 일단 입력만 하면 모달창 뜨게 해놓음. null 체크는 안해도 됨!
-      POST
     */
     console.log('Received values of form: ', values);
     handleModal();                // 닉네임 없는 경우 modal open

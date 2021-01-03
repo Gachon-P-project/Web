@@ -1,7 +1,6 @@
-/* *
-    free board in main
-
-*/
+/**
+ * free board in main
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -11,7 +10,7 @@ import useWindowSize from './useWindowSize';
 import EmptyData from './EmptyData';
 
 /*
-    fix : 자유 게시글 조회
+    fix : 자유 게시물 조회 (최근 4개)
 */
 const freeData = [
     {link: '#', title: '자유 게시물 제목1', time: '방금'},

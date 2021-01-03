@@ -1,7 +1,6 @@
-/* *
-    Window size calculation
-    
-*/
+/**
+ * Window size calculation
+ */
 
 import { useLayoutEffect, useState } from 'react';
 

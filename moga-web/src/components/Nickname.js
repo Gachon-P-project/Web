@@ -1,8 +1,12 @@
+/**
+ * 초기 닉네임 설정 modal
+ */
+
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Modal, Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 import '../css/Nickname.css';
-import { Modal, Form, Input, Button } from 'antd';
 
 function Nickname({ history, state }) {
     const [form] = Form.useForm();
@@ -31,8 +35,7 @@ function Nickname({ history, state }) {
         setCheckState('none');
 
         /*
-            fix : a일 때 중복이게 해놓음
-            POST
+            fix : 중복 체크. a일 때 중복이게 해놓음
         */
 
         if (values.nickname === 'a') {  // 중복일 경우
@@ -50,8 +53,7 @@ function Nickname({ history, state }) {
             setCheckState('block');
         } else if (possState === 'block') { // 사용 가능한 경우
             /*
-                fix
-                POST
+                fix : 닉네임 추가
             */
             history.push('/main');
         }
@@ -63,7 +65,7 @@ function Nickname({ history, state }) {
             title="닉네임을 설정하세요."
             centered
             visible={state}
-            closable={false} // x 버튼 비활성화
+            closable={false} // x 버튼 비활성화. 모달 한 번 열리면 못 닫게 함
             width={350}
             footer={[
                 <Button key="submit" type="primary" onClick={handleOkClick}>

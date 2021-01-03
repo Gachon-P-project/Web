@@ -1,58 +1,45 @@
+/**
+ * 학과 게시판
+ */
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import useWindowSize from './useWindowSize';
-import HeaderWeb from './HeaderWeb';
-import HeaderMobile from './HeaderMobile';
+import Layout from './Layout';
 import Breadcrumb from './Breadcrumb';
-import BoardPost from './BoardPost';
-import Footer from './Footer';
-import '../css/Main.css';
-import '../css/Content.css';
+import BoardPostList from './BoardPostList';
 import '../css/Breadcrumb.css';
 
 function BoardMajor() {
+
+    /*
+        fix : 학과 게시물 전체 조회
+    */
     const postItems = [
-        {link: '', title: '학과 게시물 제목1', contents: '학과 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
-        {link: '', title: '학과 게시물 제목2', contents: '학과 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-        {link: '', title: '학과 게시물 제목3', contents: '학과 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
+        {no: 0, link: '', title: '학과 게시물 제목1', contents: '학과 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
+        {no: 1, link: '', title: '학과 게시물 제목2', contents: '학과 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
+        {no: 2, link: '', title: '학과 게시물 제목3', contents: '학과 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
-    const width = useWindowSize();
-
-    let header;
-    if (width > 736) {
-        header = <HeaderWeb />;
-    } else {
-        header = <HeaderMobile />;
-    }
-
     return (
-        <div className="main">
+        <Layout header footer>
+            {/* breadcrumb */}
+            <Breadcrumb link="/main, /main/board/major" name="게시판, 학과 게시판" />
 
-            {header}
-
-            <div className="content">
-                {/* breadcrumb */}
-                <Breadcrumb link="/main, /main/board/major" name="게시판, 학과 게시판" />
-
-                {/* post */}
-                {postItems.map((postItem, i) =>
-                    <BoardPost
-                        link={postItem.link}
-                        title={postItem.title}
-                        contents={postItem.contents}
-                        time={postItem.time}
-                        writer={postItem.writer}
-                        like={postItem.like}
-                        reply={postItem.reply}
-                        key={i}
-                    />
-                )}
-            </div>
-
-            <Footer />
-
-        </div>
+            {/* post */}
+            {postItems.map((postItem) =>
+                <BoardPostList
+                    link={postItem.link}
+                    title={postItem.title}
+                    contents={postItem.contents}
+                    time={postItem.time}
+                    writer={postItem.writer}
+                    like={postItem.like}
+                    reply={postItem.reply}
+                    key={postItem.no}
+                />
+            )}
+        </Layout>
+        
     );
 }
 

@@ -1,15 +1,14 @@
-/* *
-    web version header
-    
-*/
+/**
+ * web version header
+ */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/Header.css';
-import 'antd/dist/antd.css';
 import logo from '../image/logo.png';
 import MenuWeb from './MenuWeb';
 import MenuRight from './MenuRight';
+import 'antd/dist/antd.css';
+import '../css/Header.css';
 
 function HeaderWeb() {
 

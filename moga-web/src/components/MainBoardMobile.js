@@ -1,7 +1,6 @@
-/* *
-    mobile version board in main
-    
-*/
+/**
+ * mobile version board in main
+ */
 
 import React from 'react';
 import { List } from 'antd';
@@ -9,31 +8,28 @@ import MainBoardMajor from './MainBoardMajor';
 import MainBoardFree from './MainBoardFree';
 import MainBoardHot from './MainBoardHot';
 import MainBoardSubject from './MainBoardSubject';
-import '../css/Content.css';
 import '../css/MainBoard.css';
 
 function MainBoardMobile() {
     return(
-        <div className="content">
-            <div className="board-wrap">
+        <div className="board-wrap">
 
-                {/* 수업 게시판 */}
-                <MainBoardSubject />
+            {/* 수업 게시판 */}
+            <MainBoardSubject />
 
-                <List
-                    className="board-list"
-                    bordered
-                >
-                    {/* 학과 게시판 */}
-                    <MainBoardMajor />
+            <List
+                className="board-list"
+                bordered
+            >
+                {/* 학과 게시판 */}
+                <MainBoardMajor />
 
-                    {/* 자유 게시판 */}
-                    <MainBoardFree />
-                </List>
+                {/* 자유 게시판 */}
+                <MainBoardFree />
+            </List>
 
-                {/* HOT 게시물 */}
-                <MainBoardHot />
-            </div>
+            {/* HOT 게시물 */}
+            <MainBoardHot />
         </div>
     );
 }
