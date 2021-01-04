@@ -1,0 +1,12 @@
+.post-search-btn {
+    float: right;
+    max-height: 61.6px;
+    line-height: 61.6px;
+    margin-right: 20px;
+    font-size: 1.5em;
+}
+
+.post-search-btn > a {
+    text-decoration: none;
+    color: #333333;
+}

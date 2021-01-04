@@ -6,7 +6,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import Breadcrumb from './Breadcrumb';
-import BoardPostList from './BoardPostList';
+import PostSearchBtn from './PostSearchBtn';
+import PostWriteBtn from './PostWriteBtn';
+import PostList from './PostList';
 
 function BoardSubject(props) {
     const { params } = props.match;
@@ -24,20 +26,36 @@ function BoardSubject(props) {
     return (
         <Layout header footer>
             {/* breadcrumb */}
-            <Breadcrumb link="/main, #, #" name={"게시판, 수업 게시판, " + params.subject} />
+            {/* 
+                fix : 마지막에 수업명
+            */}
+            <Breadcrumb link="#, #" name={"수업 게시판, " + params.subject} />
 
-            {postItems.map((postItem) =>
-                <BoardPostList
-                    link={postItem.link}
-                    title={postItem.title}
-                    contents={postItem.contents}
-                    time={postItem.time}
-                    writer={postItem.writer}
-                    like={postItem.like}
-                    reply={postItem.reply}
-                    key={postItem.no}
-                />
-            )}
+            {/* search button */}
+            <PostSearchBtn />
+
+            {/* post list */}
+            {postItems.length === 0
+            ?
+                <PostList empty="y" />
+            :
+                postItems.map((postItem) =>
+                    <PostList
+                        empty="n"
+                        link={postItem.link}
+                        title={postItem.title}
+                        contents={postItem.contents}
+                        time={postItem.time}
+                        writer={postItem.writer}
+                        like={postItem.like}
+                        reply={postItem.reply}
+                        key={postItem.no}
+                    />
+                )
+            }
+
+            {/* write button */}
+            <PostWriteBtn />
         </Layout>
     );
 }

@@ -1,14 +1,16 @@
 .breadcrumb {
-    padding: 20px;
+    padding: 20px 0 20px 20px;
+    display: inline-flex;
+}
+
+.breadcrumb > span {
+    max-height: 21.6px;
+    overflow: hidden;
 }
 
 .breadcrumb-link > a {
     text-decoration: none;
     color: #9e9e9e;
-}
-
-.breadcrumb-link > a:hover {
-    color: #1890ff;
 }
 
 .breadcrumb-separator {

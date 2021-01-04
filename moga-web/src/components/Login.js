@@ -13,11 +13,11 @@ function Login(props) {
     fix : 로그인 상태 유지
   */
 
-  // id, pw check
+  // login function
   const onFinish = (values) => {
 
     /*
-      fix : 일단 입력만 하면 모달창 뜨게 해놓음. null 체크는 안해도 됨!
+      fix : id, pw check. 일단 입력만 하면 모달창 뜨게 해놓음. null 체크는 안해도 됨!
     */
     console.log('Received values of form: ', values);
     handleModal();                // 닉네임 없는 경우 modal open
@@ -30,7 +30,7 @@ function Login(props) {
     setModalState(true);
   }
 
-  return(
+  return (
     <>
       <img src={background} alt="gachon" className="wrap" />
       <Form

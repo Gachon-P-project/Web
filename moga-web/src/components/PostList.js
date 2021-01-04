@@ -5,11 +5,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LikeOutlined, MessageOutlined } from '@ant-design/icons';
-import '../css/BoardPostList.css';
+import EmptyData from './EmptyData';
+import '../css/PostList.css';
 
-function BoardPostList(props) {
+function PostList(props) {
 
     return (
+        props.empty === 'n'
+        ?
         <div className="postList">
             <Link to={props.link}>
                 <div className="postList-title">{props.title}</div>
@@ -24,7 +27,9 @@ function BoardPostList(props) {
                 </div>
             </Link>
         </div>
+        :
+        <EmptyData info="아직 게시물이 없습니다." />
     );
 }
 
-export default BoardPostList;
+export default PostList;
