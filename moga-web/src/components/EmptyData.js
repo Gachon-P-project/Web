@@ -4,11 +4,12 @@
 
 import React from 'react';
 import { SmileOutlined, MehOutlined } from '@ant-design/icons';
+import '../css/EmptyData.css'
 
 function EmptyData(props) {
-    return(
-        <div>
-            <div style={{ fontSize: '1.5em' }}>
+    return (
+        <div className="empty">
+            <div className="empty-icon">
                 {/* 웃는 표정, 무표정 중에 고를 수 있음 */}
                 {props.icon === "SmileOutlined" ? <SmileOutlined /> : <MehOutlined />}
             </div>

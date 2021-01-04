@@ -6,7 +6,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import Breadcrumb from './Breadcrumb';
-import BoardPostList from './BoardPostList';
+import PostList from './PostList';
 import '../css/Breadcrumb.css';
 
 function BoardHOT() {
@@ -24,21 +24,27 @@ function BoardHOT() {
     return (
         <Layout header footer>
             {/* breadcrumb */}
-            <Breadcrumb link="/main, /main/board/hot" name="게시판, HOT 게시판" />
+            <Breadcrumb link="/main/board/hot" name="HOT 게시판" />
 
-            {/* post */}
-            {postItems.map((postItem) =>
-                <BoardPostList
-                    link={postItem.link}
-                    title={postItem.title}
-                    contents={postItem.contents}
-                    time={postItem.time}
-                    writer={postItem.writer}
-                    like={postItem.like}
-                    reply={postItem.reply}
-                    key={postItem.no}
-                />
-            )}
+            {/* post list */}
+            {postItems.length === 0
+            ?
+                <PostList empty="y" />
+            :
+                postItems.map((postItem) =>
+                    <PostList
+                        empty="n"
+                        link={postItem.link}
+                        title={postItem.title}
+                        contents={postItem.contents}
+                        time={postItem.time}
+                        writer={postItem.writer}
+                        like={postItem.like}
+                        reply={postItem.reply}
+                        key={postItem.no}
+                    />
+                )
+            }
         </Layout>
     );
 }
