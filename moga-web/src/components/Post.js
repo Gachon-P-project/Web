@@ -3,12 +3,15 @@ import { withRouter } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { UserOutlined, LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import Layout from './Layout';
+import PageHeader from './PageHeader';
 import Reply from './Reply';
 import '../css/Post.css';
 
 function Post() {
     return (
         <Layout header footer>
+            <PageHeader title="무슨 게시판" />
+
             <div className="post-wrap">
                 <div className="post">
                     <Avatar className="post-avatar" size="large" icon={<UserOutlined />} />

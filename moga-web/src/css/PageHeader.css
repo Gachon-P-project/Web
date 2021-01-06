@@ -1,0 +1,22 @@
+.ph {
+    /* font-size: 1.2em; */
+    padding: 15px 0 15px 20px;
+    display: inline-block;
+}
+
+.ph-back {
+    cursor: pointer;
+}
+
+.ph-title {
+    margin-left: 10px;
+    cursor: default;
+}
+
+.post-menu-btn {
+    float: right;
+    font-size: 1.5em;
+    max-height: 51.6px;
+    line-height: 51.6px;
+    margin-right: 10px;
+}

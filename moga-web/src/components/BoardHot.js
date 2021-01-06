@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import Breadcrumb from './Breadcrumb';
 import PostList from './PostList';
-import '../css/Breadcrumb.css';
 
 function BoardHOT() {
 

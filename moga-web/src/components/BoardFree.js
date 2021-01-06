@@ -9,7 +9,6 @@ import Breadcrumb from './Breadcrumb';
 import PostSearchBtn from './PostSearchBtn';
 import PostWriteBtn from './PostWriteBtn';
 import PostList from './PostList';
-import '../css/Breadcrumb.css';
 
 function BoardFree() {
     /*
