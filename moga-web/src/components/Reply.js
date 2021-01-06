@@ -1,54 +1,52 @@
 import React from 'react';
-import { Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import ReplyItem from './ReplyItem';
 import '../css/Reply.css';
 
 function Reply() {
-    // const replyItems = [
-    //     {no: 0, writer: '익명1', contents: '감스트ㅡ미스포차', time: '10분 전', like: 0, depth: 0},
-    //     {no: 1, writer: '익명1', contents: '감스트ㅡ미스포차', time: '10분 전', like: 0, depth: 0},
-    // ];
+
+    // 댓글, 답글 조회
+    const replyItems = [
+        {no: 1, writer: '익명1', contents: '첫 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
+        {no: 2, writer: '익명2', contents: '첫 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
+        {no: 3, writer: '익명1', contents: '첫 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
+        {no: 4, writer: '익명2', contents: '두 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
+        {no: 5, writer: '익명3', contents: '세 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
+        {no: 6, writer: '익명4', contents: '세 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
+    ];
+
+    // 댓글 구분선
+    const replyStyle = {
+        borderTop: '1px solid #e3e3e3'
+    };
+
+    // 답글 margin
+    const reReplyStyle = {
+        marginLeft: '25px'
+    };
 
     return (
-        <>
         <div className="reply-wrap">
-            <div className="reply">
-                <Avatar className="reply-avatar" size="small" icon={<UserOutlined />} />
-                <div className="bold">익명1</div>
-                <div className="reply-contents">감스트ㅡ미스포차</div>
-                <div className="reply-time">10분 전</div>
-            </div>
-        </div>
+            {replyItems.map((replyItem) =>
+                replyItem.depth === 0
+                ?
+                <ReplyItem
+                    writer={replyItem.writer}
+                    contents={replyItem.contents}
+                    time={replyItem.time}
+                    style={replyStyle}
+                    key={replyItem.no}
+                />
+                :
+                <ReplyItem
+                    writer={replyItem.writer}
+                    contents={replyItem.contents}
+                    time={replyItem.time}
+                    style={reReplyStyle}
+                    key={replyItem.no}
+                />
+            )}
 
-        <div className="re-reply-wrap">
-            <div className="re-reply">
-                <Avatar className="reply-avatar" size="small" icon={<UserOutlined />} />
-                <div className="bold">익명2</div>
-                <div className="reply-contents">감스트..?</div>
-                <div className="reply-time">10분 전</div>
-            </div>
         </div>
-        <div className="re-reply-wrap">
-            <div className="re-reply">
-                <Avatar className="reply-avatar" size="small" icon={<UserOutlined />} />
-                <div className="bold">익명1</div>
-                <div className="reply-contents">유튜브에 있음</div>
-                <div className="reply-time">10분 전</div>
-            </div>
-        </div>
-
-        {/* {replyItems.map((replyItem) =>
-            
-            <div className="reply-wrap" key={replyItem.no}>
-                <div className="reply">
-                    <Avatar className="reply-avatar" size="small" icon={<UserOutlined />} />
-                    <div className="bold">{replyItem.writer}</div>
-                    <div className="reply-contents">{replyItem.contents}</div>
-                    <div className="reply-time">{replyItem.time}</div>
-                </div>
-            </div>
-        )} */}
-        </>
     );
 }
 
