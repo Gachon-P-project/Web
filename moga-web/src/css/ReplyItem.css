@@ -11,6 +11,26 @@
     margin: 0 5px 5px 0;
 }
 
+.reply-writer {
+    float: left;
+}
+
+.reply-mark {
+    float: left;
+    min-height: 21.6px;
+    display: flex;
+    align-items: center;
+}
+
+.reply-mark > div {
+    font-size: 0.7em;
+    color: #03A9F4;
+    border: 1px solid #03A9F4;
+    border-radius: 20px;
+    padding: 1px 5px;
+    margin-left: 5px;
+}
+
 .reply-contents {
     clear: both;
 }

@@ -13,7 +13,7 @@ import EmptyData from './EmptyData';
     fix : 자유 게시물 조회 (최근 4개)
 */
 const freeData = [
-    {link: '#', title: '자유 게시물 제목1', time: '방금'},
+    {link: '/main/board/post', title: '자유 게시물 제목1', time: '방금'},
     {link: '#', title: '자유 게시물 제목2', time: '10분 전'},
     {link: '#', title: '자유 게시물 제목3', time: '21/01/01 18:00'},
     {link: '#', title: '자유 게시물 제목4', time: '20/12/30 12:30'},

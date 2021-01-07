@@ -17,8 +17,8 @@ function Post() {
     const postItem = {
         no: 1,
         writer: '닉네임',
-        title: '새벽을 틈타',
-        contents: '노래 추천좀',
+        title: '제목제목제목',
+        contents: '~~~~내용~~~~~~~',
         time: '5분 전',
         like: 10,
         reply: 6,
@@ -42,7 +42,7 @@ function Post() {
             />
 
             {/* 댓글, 답글 */}
-            <Reply />
+            <Reply writer={postItem.writer} />
 
             {/* 댓글 입력창 */}
             <ReplyWrite />
