@@ -1,35 +1,51 @@
+/**
+ * 게시물
+ */
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Avatar } from 'antd';
-import { UserOutlined, LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import Layout from './Layout';
 import PageHeader from './PageHeader';
+import PostItem from './PostItem';
 import Reply from './Reply';
-import '../css/Post.css';
+import ReplyWrite from './ReplyWrite';
 
 function Post() {
+    /*
+        fix : 특정 게시물 조회
+    */
+    const postItem = {
+        no: 1,
+        writer: '닉네임',
+        title: '새벽을 틈타',
+        contents: '노래 추천좀',
+        time: '5분 전',
+        like: 10,
+        reply: 6,
+        scrap: 2
+    }
+
     return (
         <Layout header footer>
             <PageHeader title="무슨 게시판" />
 
-            <div className="post-wrap">
-                <div className="post">
-                    <Avatar className="post-avatar" size="large" icon={<UserOutlined />} />
-                    <div className="post-info">
-                        <div className="bold">익명</div>
-                        <div className="post-time">5분 전</div>
-                    </div>
-                    <div className="post-title bold">새벽을 틈타</div>
-                    <div className="post-contents">노래 추천좀 배경으로 깔리는 음이 좋은 노래가 좋아 발라드로</div>
-                    <div className="post-status">
-                        <div className="post-like"><LikeOutlined /> 2</div>
-                        <div className="post-reply"><MessageOutlined /> 12</div>
-                        <div className="post-scrap"><StarOutlined /> 1</div>
-                    </div>
-                </div>
-            </div>
+            {/* 게시물 */}
+            <PostItem
+                writer={postItem.writer}
+                title={postItem.title}
+                contents={postItem.contents}
+                time={postItem.time}
+                like={postItem.like}
+                reply={postItem.reply}
+                scrap={postItem.scrap}
+                key={postItem.no}
+            />
 
+            {/* 댓글, 답글 */}
             <Reply />
+
+            {/* 댓글 입력창 */}
+            <ReplyWrite />
 
         </Layout>
     );

@@ -28,7 +28,7 @@ function PostList(props) {
             </Link>
         </div>
         :
-        <EmptyData info="아직 게시물이 없습니다." />
+        <EmptyData info="작성된 게시물이 없습니다." />
     );
 }
 

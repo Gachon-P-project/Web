@@ -1,10 +1,14 @@
+/**
+ * 댓글, 답글
+ */
+
 import React from 'react';
 import ReplyItem from './ReplyItem';
-import '../css/Reply.css';
 
 function Reply() {
-
-    // 댓글, 답글 조회
+    /*
+        fix : 댓글, 답글 조회
+    */
     const replyItems = [
         {no: 1, writer: '익명1', contents: '첫 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
         {no: 2, writer: '익명2', contents: '첫 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
@@ -19,7 +23,7 @@ function Reply() {
         borderTop: '1px solid #e3e3e3'
     };
 
-    // 답글 margin
+    // 답글일 시 margin
     const reReplyStyle = {
         marginLeft: '25px'
     };

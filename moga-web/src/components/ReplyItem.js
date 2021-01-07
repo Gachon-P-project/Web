@@ -1,6 +1,11 @@
+/**
+ * 댓글 UI
+ */
+
 import React from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import '../css/ReplyItem.css';
 
 function ReplyItem(props) {
 
