@@ -55,6 +55,7 @@ function Nickname({ history, state }) {
             /*
                 fix : 닉네임 추가
             */
+            console.log('nickname: ', nickname);
             history.push('/main');
         }
     }

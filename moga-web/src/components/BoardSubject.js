@@ -55,7 +55,7 @@ function BoardSubject(props) {
             }
 
             {/* write button */}
-            <PostWriteBtn />
+            <PostWriteBtn board="subject" />
         </Layout>
     );
 }

@@ -49,7 +49,7 @@ function BoardFree() {
             }
 
             {/* write button */}
-            <PostWriteBtn />
+            <PostWriteBtn board="free" />
         </Layout>
     );
 }

@@ -8,6 +8,7 @@ import BoardSubject from './components/BoardSubject';
 import BoardFree from './components/BoardFree';
 import BoardHot from './components/BoardHot';
 import Post from './components/Post';
+import PostWrite from './components/PostWrite';
 import Notice from './components/Notice';
 import Timetable from './components/Timetable';
 
@@ -23,6 +24,7 @@ function Routes() {
                 <Route exact path="/main/board/free" component={BoardFree} />
                 <Route exact path="/main/board/hot" component={BoardHot} />
                 <Route exact path="/main/board/post" component={Post} />
+                <Route exact path="/main/board/post/write/:board" component={PostWrite} />
                 <Route exact path="/main/notice" component={Notice} />
                 <Route exact path="/main/timetable" component={Timetable} />
             </Switch>

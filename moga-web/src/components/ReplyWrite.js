@@ -10,7 +10,9 @@ import '../css/ReplyWrite.css';
 function ReplyWrite() {
 
     // 창 크기에 따라 input width 조절
-    const width = useWindowSize();
+    const size = useWindowSize();
+    const width = size[0];
+    
     let inputWidth;
     if (width > 736) {
         inputWidth = { width: '700px' };

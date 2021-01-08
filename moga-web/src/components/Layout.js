@@ -11,7 +11,9 @@ import '../css/Layout.css';
 
 // 다른 컴포넌트에서 사용 시 header, footer 필요한 것만 값 넘겨주면 됨
 function Layout ({ header, footer, children }) {
-    const width = useWindowSize();
+    const size = useWindowSize();
+    const width = size[0];
+    // const height = size[1];
 
     let headerType;
 

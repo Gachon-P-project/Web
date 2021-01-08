@@ -6,7 +6,9 @@ import MainBoardWeb from './MainBoardWeb';
 import MainBoardMobile from './MainBoardMobile';
 
 function Main() {
-    const width = useWindowSize();
+    const size = useWindowSize();
+    const width = size[0];
+
     let mainBoard;
 
     if (width > 736) {

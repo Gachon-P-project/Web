@@ -20,7 +20,8 @@ const majorData = [
 ];
 
 function MainBoardMajor() {
-    const width = useWindowSize();
+    const size = useWindowSize();
+    const width = size[0];
 
     let mainBoardMajor;
     

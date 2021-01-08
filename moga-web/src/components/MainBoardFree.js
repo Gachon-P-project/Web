@@ -20,7 +20,8 @@ const freeData = [
 ];
 
 function MainBoardFree() {
-    const width = useWindowSize();
+    const size = useWindowSize();
+    const width = size[0];
 
     let mainBoardFree;
     

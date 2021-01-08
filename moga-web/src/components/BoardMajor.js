@@ -52,7 +52,7 @@ function BoardMajor() {
             }
 
             {/* write button */}
-            <PostWriteBtn />
+            <PostWriteBtn board="major" />
         </Layout>
     );
 }

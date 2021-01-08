@@ -1,0 +1,67 @@
+.post-write {
+    text-align: center;
+    padding: 15px;
+}
+
+.pw-close {
+    float: left;
+    font-size: 1.3em;
+}
+
+.pw-header {
+    display: inline-flex;
+    padding: 3.2px 0;
+}
+
+.pw-ok {
+    background-color: #3F51B5;
+    float: right;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5.2px 10px;
+    font-size: 0.8em;
+}
+
+.pw-title > input {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 1.5em;
+    margin: 15px 0;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.pw-contents {
+    position: relative;
+}
+
+.pw-contents > textarea {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    font-size: 1.2em;
+    /* background-color: lavender; */
+    white-space: pre-line;
+    outline: none;
+    padding: 10px;
+}
+
+.pw-placeholder {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #a7a7a7;
+    text-align: left;
+    padding-left: 10px;
+    background-color: lavenderblush;
+    display: none;
+}
+
+/* @media screen and (max-width: 736px) {
+    .pw-placeholder {
+        color: #a7a7a7;
+    }
+} */
