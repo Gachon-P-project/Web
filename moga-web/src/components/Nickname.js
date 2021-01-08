@@ -106,7 +106,7 @@ function Nickname({ history, state }) {
                         <p style={{ color: '#1890ff', display: possState}}>사용 가능한 닉네임입니다.</p>
                         <p>※ 닉네임은 변경이 가능합니다.</p>
                     </Form.Item>
-                    </Form>
+                </Form>
                 
         </Modal>
         : null

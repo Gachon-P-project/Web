@@ -27,12 +27,13 @@ function ReplyWrite() {
     const handleSubmitClick = (e) => {
         e.preventDefault();
 
-        // 입력한 경우 댓글 추가 -> 게시물 refresh
-        (reply !== '') && console.log('reply submit ' + reply);
-        /*
-            fix : 댓글 추가
-        */
-
+        // 입력한 경우 댓글 추가 -> 댓글 refresh
+        if (reply !== '') {
+            console.log('reply submit: ' + reply);
+            /*
+                fix : 댓글 추가
+            */
+        }
     }
 
     return (
