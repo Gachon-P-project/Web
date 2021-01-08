@@ -4,10 +4,13 @@
 
 import React from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined, LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
+import { UserOutlined, MessageOutlined } from '@ant-design/icons';
+import PostLike from './PostLike';
+import PostScrap from './PostScrap';
 import '../css/PostItem.css';
 
 function PostItem(props) {
+
     return (
         <div className="post-wrap">
             <div className="post">
@@ -19,9 +22,9 @@ function PostItem(props) {
                 <div className="post-title bold">{props.title}</div>
                 <div className="post-contents">{props.contents}</div>
                 <div className="post-status">
-                    <div className="post-like"><LikeOutlined /> {props.like}</div>
+                    <PostLike like={props.like} />
                     <div className="post-reply"><MessageOutlined /> {props.reply}</div>
-                    <div className="post-scrap"><StarOutlined /> {props.scrap}</div>
+                    <PostScrap scrap={props.scrap} />
                 </div>
             </div>
         </div>

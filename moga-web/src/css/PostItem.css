@@ -34,6 +34,11 @@
     float: left;
     color: #c62917;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.post-like > .anticon-like > svg > path {
+    fill: #c62917;
 }
 
 .post-reply {
@@ -44,4 +49,9 @@
 
 .post-scrap {
     color: #ffcc1c;
+    cursor: pointer;
+}
+
+.post-scrap > .anticon-star > svg > path {
+    fill: #ffcc1c;
 }
