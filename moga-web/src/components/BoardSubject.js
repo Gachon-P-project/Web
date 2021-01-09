@@ -18,9 +18,9 @@ function BoardSubject(props) {
         fix : 수업별 게시글 전체 조회
     */
     const postItems = [
-        {no: 0, link: '', title: '제목1', contents: '내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
-        {no: 1, link: '', title: '제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-        {no: 2, link: '', title: '제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
+        {no: 0, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목1', contents: '내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
+        {no: 1, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
+        {no: 2, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
     return (
@@ -39,7 +39,7 @@ function BoardSubject(props) {
                 postItems.map((postItem) =>
                     <PostList
                         empty="n"
-                        link={postItem.link}
+                        link={postItem.link+postItem.no}
                         title={postItem.title}
                         contents={postItem.contents}
                         time={postItem.time}
@@ -52,7 +52,7 @@ function BoardSubject(props) {
             }
 
             {/* write button */}
-            <PostWriteBtn board={params.subject+'&'+params.professor} />
+            <PostWriteBtn board={'subject&'+params.subject+'&'+params.professor} />
         </Layout>
     );
 }

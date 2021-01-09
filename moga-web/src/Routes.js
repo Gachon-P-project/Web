@@ -18,14 +18,24 @@ function Routes() {
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/main" component={Main} />
+
+                {/* 게시판 */}
                 <Route exact path="/main/board/major" component={BoardMajor} />
                 {/* <Route exact path="/main/board/subject" component={BoardSubject} /> */}
                 <Route exact path='/main/board/subject/:subject/:professor/:userNo' component={BoardSubject} />
                 <Route exact path="/main/board/free" component={BoardFree} />
                 <Route exact path="/main/board/hot" component={BoardHot} />
-                <Route exact path="/main/board/post" component={Post} />
-                <Route exact path="/main/board/post/write/:board" component={PostWrite} />
+
+                {/* 게시물 */}
+                {/* <Route exact path="/main/board/post" component={Post} /> */}
+                <Route exact path="/main/board/post/:board/:postNo" component={Post} />
+                {/* <Route exact path="/main/board/post/write" component={PostWrite} /> */}
+                <Route exact path="/main/board/postwrite/:board" component={PostWrite} />
+
+                {/* 공지사항 */}
                 <Route exact path="/main/notice" component={Notice} />
+
+                {/* 시간표 */}
                 <Route exact path="/main/timetable" component={Timetable} />
             </Switch>
         </Router>

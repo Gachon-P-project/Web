@@ -9,7 +9,7 @@ import '../css/PostWriteBtn.css';
 
 function PostWriteBtn(props) {
     
-    const link = '/main/board/post/write/'+props.board;
+    const link = '/main/board/postwrite/'+props.board;
 
     return (
         <Link to={link} className="post-write-btn bold">

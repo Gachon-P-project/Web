@@ -50,7 +50,7 @@ function PostWrite(props) {
                 }
             })
         } else {
-            alert('게시판 '+params.board+'\n제목 '+title+'\n내용 '+con);
+            alert('게시판 '+ params.board + '\n제목 ' + title + '\n내용 ' + con + '\n추가해라');
             /*
                 fix : 게시물 추가
             */
@@ -62,7 +62,7 @@ function PostWrite(props) {
         history.goBack();
     }
 
-    const conp = '여기를 눌러서 글을 작성할 수 있습니다. \n\n [커뮤니티 이용규칙에 어긋나는 행위 금지] \n 1. 게시판의 스크린샷, 게시물 내용 유출 \n 2. 욕설, 비하, 음란물, 개인정보가 포함된 게시물 게시 \n 3. 특정인이나 단체/지역을 비방하는 행위 \n 4. 기타 약관 및 현행법에 어긋나는 행위';
+    const conp = '여기를 눌러서 글을 작성할 수 있습니다. \n\n[커뮤니티 이용규칙에 어긋나는 행위 금지] \n1. 게시판의 스크린샷, 게시물 내용 유출 \n2. 욕설, 비하, 음란물, 개인정보가 포함된 게시물 게시 \n3. 특정인이나 단체/지역을 비방하는 행위 \n4. 기타 약관 및 현행법에 어긋나는 행위';
 
     return (
         <Layout header footer>

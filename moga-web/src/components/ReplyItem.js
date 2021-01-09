@@ -33,7 +33,7 @@ function ReplyItem(props) {
                 <MoreOutlined />
                 <ReplyMenu state={modalState} close={closeModal} />
             </div>
-            <div className="reply-contents">{props.contents}</div>
+            <pre className="reply-contents">{props.contents}</pre>
             <div className="reply-time">{props.time}</div>
         </div>
     );

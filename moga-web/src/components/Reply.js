@@ -11,8 +11,8 @@ function Reply(props) {
         fix : 댓글, 답글 조회
     */
     const replyItems = [
-        {no: 1, writer: '익명1', contents: '첫 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
-        {no: 2, writer: '닉네임', contents: '첫 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
+        {no: 1, writer: '익명1', contents: '첫 번째 댓글\n댓글', time: '10분 전', depth: 0, is_deleted: 0},
+        {no: 2, writer: '닉네임', contents: '첫 번째 댓글의 답글\n답글', time: '10분 전', depth: 1, is_deleted: 0},
         {no: 3, writer: '익명1', contents: '첫 번째 댓글의 답글', time: '10분 전', depth: 1, is_deleted: 0},
         {no: 4, writer: '익명3', contents: '두 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},
         {no: 5, writer: '익명4', contents: '세 번째 댓글', time: '10분 전', depth: 0, is_deleted: 0},

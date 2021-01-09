@@ -10,15 +10,31 @@ import PostItem from './PostItem';
 import Reply from './Reply';
 import ReplyWrite from './ReplyWrite';
 
-function Post() {
+function Post(props) {
+    const { params } = props.match;
+    // parameter : params.board, params.postNo
+
+    const board = params.board.split('&');
+
+    let headerTitle = ''
+    if (params.board === 'major') {
+        headerTitle = '학과 게시판';
+    } else if (params.board === 'free') {
+        headerTitle = '자유 게시판';
+    } else if (params.board === 'hot') {
+        headerTitle = 'HOT 게시판';
+    } else if (board[0] === 'subject') {
+        headerTitle = board[1];
+    }
+
     /*
         fix : 특정 게시물 조회
     */
     const postItem = {
-        no: 1,
+        no: params.postNo,
         writer: '닉네임',
-        title: '제목제목제목',
-        contents: '~~~~내용~~~~~~~',
+        title: headerTitle + ' 게시물',
+        contents: '게시물 테스트중...\npost_no : ' + params.postNo,
         time: '5분 전',
         like: 10,
         reply: 6,
@@ -27,7 +43,7 @@ function Post() {
 
     return (
         <Layout header footer>
-            <PageHeader title="무슨 게시판" />
+            <PageHeader title={headerTitle} />
 
             {/* 게시물 */}
             <PostItem

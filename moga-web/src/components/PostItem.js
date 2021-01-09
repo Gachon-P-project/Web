@@ -20,7 +20,7 @@ function PostItem(props) {
                     <div className="post-time">{props.time}</div>
                 </div>
                 <div className="post-title bold">{props.title}</div>
-                <div className="post-contents">{props.contents}</div>
+                <pre className="post-contents">{props.contents}</pre>
                 <div className="post-status">
                     <PostLike like={props.like} />
                     <div className="post-reply"><MessageOutlined /> {props.reply}</div>

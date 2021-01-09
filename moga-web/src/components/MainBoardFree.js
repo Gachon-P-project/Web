@@ -13,10 +13,10 @@ import EmptyData from './EmptyData';
     fix : 자유 게시물 조회 (최근 4개)
 */
 const freeData = [
-    {link: '/main/board/post', title: '자유 게시물 제목1', time: '방금'},
-    {link: '#', title: '자유 게시물 제목2', time: '10분 전'},
-    {link: '#', title: '자유 게시물 제목3', time: '21/01/01 18:00'},
-    {link: '#', title: '자유 게시물 제목4', time: '20/12/30 12:30'},
+    {no: 0, link: '/main/board/post/free/', title: '자유 게시물 제목1', time: '방금'},
+    {no: 1, link: '/main/board/post/free/', title: '자유 게시물 제목2', time: '10분 전'},
+    {no: 2, link: '/main/board/post/free/', title: '자유 게시물 제목3', time: '21/01/01 18:00'},
+    {no: 3, link: '/main/board/post/free/', title: '자유 게시물 제목4', time: '20/12/30 12:30'},
 ];
 
 function MainBoardFree() {
@@ -42,7 +42,7 @@ function MainBoardFree() {
 /* web version */
 
 const Empty = () => (
-    <EmptyData info="아직 자유 게시물이 없습니다." desc="게시물을 작성해 주세요!" />
+    <EmptyData info="작성된 자유 게시물이 없습니다." desc="게시물을 작성해 주세요!" />
 );
 
 function MainBoardFreeWeb() {
@@ -55,7 +55,7 @@ function MainBoardFreeWeb() {
                 dataSource={freeData}
                 renderItem={item => (
                     <List.Item className="board-data">
-                        <Link to={item.link}>
+                        <Link to={item.link+item.no}>
                             <div className="board-data-title">{item.title}</div>
                             <div className="board-data-time">{item.time}</div>
                         </Link>
@@ -80,7 +80,7 @@ function MainBoardFreeMobile() {
                     ?
                     // 게시글 없는 경우
                     <span className="board-mobile-data board-mobile-data-empty">
-                        <MehOutlined />아직 자유 게시물이 없습니다.
+                        <MehOutlined />작성된 자유 게시물이 없습니다.
                     </span>
                     :
                     // 게시글 있는 경우

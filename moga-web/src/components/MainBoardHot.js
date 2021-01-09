@@ -12,11 +12,11 @@ import EmptyData from './EmptyData';
     fix : hot 게시물 조회 (5개)
 */
 const hotData = [
-    {link: '#', title: 'hot 게시물 제목1', time: '방금', like: 20, reply: 4},
-    {link: '#', title: 'hot 게시물 제목2', time: '10분 전', like: 30, reply: 10},
-    {link: '#', title: 'hot 게시물 제목3', time: '21/01/01 18:00', like: 15, reply: 21},
-    {link: '#', title: 'hot 게시물 제목4', time: '20/12/30 12:30', like: 18, reply: 7},
-    {link: '#', title: 'hot 게시물 제목5', time: '20/12/28 21:00', like: 23, reply: 30},
+    {no: 0, link: '/main/board/post/hot/', title: 'hot 게시물 제목1', time: '방금', like: 20, reply: 4},
+    {no: 1, link: '/main/board/post/hot/', title: 'hot 게시물 제목2', time: '10분 전', like: 30, reply: 10},
+    {no: 2, link: '/main/board/post/hot/', title: 'hot 게시물 제목3', time: '21/01/01 18:00', like: 15, reply: 21},
+    {no: 3, link: '/main/board/post/hot/', title: 'hot 게시물 제목4', time: '20/12/30 12:30', like: 18, reply: 7},
+    {no: 4, link: '/main/board/post/hot/', title: 'hot 게시물 제목5', time: '20/12/28 21:00', like: 23, reply: 30},
 ];
 
 
@@ -36,7 +36,7 @@ function MainBoardHot() {
                 locale={{}}
                 renderItem={item => (
                     <List.Item className="board-data">
-                        <Link to={item.link}>
+                        <Link to={item.link+item.no}>
                                 <div className="board-data-title">{item.title}</div>
                                 <div className="board-data-time">{item.time}</div>
                                 <div className="board-data-status">
