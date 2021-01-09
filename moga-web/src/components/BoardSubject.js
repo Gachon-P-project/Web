@@ -26,9 +26,6 @@ function BoardSubject(props) {
     return (
         <Layout header footer>
             {/* breadcrumb */}
-            {/* 
-                fix : 마지막에 수업명
-            */}
             <Breadcrumb link="#, #" name={"수업 게시판, " + params.subject} />
 
             {/* search button */}
@@ -55,7 +52,7 @@ function BoardSubject(props) {
             }
 
             {/* write button */}
-            <PostWriteBtn board="subject" />
+            <PostWriteBtn board={params.subject+'&'+params.professor} />
         </Layout>
     );
 }
