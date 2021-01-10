@@ -6,6 +6,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import PageHeader from './PageHeader';
+import PostMenu from './PostMenu';
 import PostItem from './PostItem';
 import Reply from './Reply';
 import ReplyWrite from './ReplyWrite';
@@ -28,10 +29,11 @@ function Post(props) {
     }
 
     /*
-        fix : 특정 게시물 조회
+        fix : 게시물 상세 조회
     */
     const postItem = {
-        no: params.postNo,
+        postNo: params.postNo,
+        userNo: '2000',
         writer: '닉네임',
         title: headerTitle + ' 게시물',
         contents: '게시물 테스트중...\npost_no : ' + params.postNo,
@@ -43,7 +45,12 @@ function Post(props) {
 
     return (
         <Layout header footer>
+
+            {/* 헤더 */}
             <PageHeader title={headerTitle} />
+
+            {/* 게시물 메뉴 */}
+            <PostMenu userNo={postItem.userNo} />
 
             {/* 게시물 */}
             <PostItem
@@ -54,7 +61,7 @@ function Post(props) {
                 like={postItem.like}
                 reply={postItem.reply}
                 scrap={postItem.scrap}
-                key={postItem.no}
+                key={postItem.postNo}
             />
 
             {/* 댓글, 답글 */}

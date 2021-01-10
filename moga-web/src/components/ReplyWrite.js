@@ -29,11 +29,11 @@ function ReplyWrite() {
     const handleSubmitClick = (e) => {
         e.preventDefault();
 
-        // 입력한 경우 댓글 추가 -> 댓글 refresh
+        // 입력한 경우 댓글 추가 -> 댓글 컴포넌트 새로고침
         if (reply !== '') {
-            console.log('reply submit: ' + reply);
+            alert(reply + '\n추가해라');
             /*
-                fix : 댓글 추가
+                fix : 댓글 추가 후 새로고침
             */
         }
     }
