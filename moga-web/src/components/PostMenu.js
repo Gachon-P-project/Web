@@ -70,8 +70,22 @@ function PostMenuItem(props) {
         history.push('/main/board/postmodify/'+props.board+'/'+props.postNo);
     }
     
+    // 수정 필요
     const handleDelete = () => {
-        alert('삭제');
+        Modal.confirm({
+            title: '삭제하시겠습니까?',
+            centered: true,
+            width: 250,
+            okText: '확인',
+            cancelText: '취소',
+            onOk() {
+                history.push('/main/board/postdelete/'+props.board+'/'+props.postNo);
+            },
+            onCancel() {
+                // Modal.destroyAll();
+                console.log('close');
+            }
+        });
     }
 
     const handleReport = () => {

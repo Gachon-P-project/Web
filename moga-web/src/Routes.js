@@ -11,6 +11,7 @@ import BoardHot from './components/BoardHot';
 import Post from './components/Post';
 import PostWrite from './components/PostWrite';
 import PostModify from './components/PostModify';
+import PostDelete from './components/PostDelete';
 import Notice from './components/Notice';
 import Timetable from './components/Timetable';
 
@@ -36,6 +37,7 @@ function Routes() {
                 {/* <Route exact path="/main/board/post/write" component={PostWrite} /> */}
                 <Route exact path="/main/board/postwrite/:board" component={PostWrite} />
                 <Route exact path="/main/board/postmodify/:board/:postNo" component={PostModify} />
+                <Route exact path="/main/board/postdelete/:board/:postNo" component={PostDelete} />
 
                 {/* 공지사항 */}
                 <Route exact path="/main/notice" component={Notice} />
