@@ -9,6 +9,7 @@ import BoardFree from './components/BoardFree';
 import BoardHot from './components/BoardHot';
 import Post from './components/Post';
 import PostWrite from './components/PostWrite';
+import PostModify from './components/PostModify';
 import Notice from './components/Notice';
 import Timetable from './components/Timetable';
 
@@ -22,7 +23,7 @@ function Routes() {
                 {/* 게시판 */}
                 <Route exact path="/main/board/major" component={BoardMajor} />
                 {/* <Route exact path="/main/board/subject" component={BoardSubject} /> */}
-                <Route exact path='/main/board/subject/:subject/:professor/:userNo' component={BoardSubject} />
+                <Route exact path='/main/board/subject/:subject/:professor' component={BoardSubject} />
                 <Route exact path="/main/board/free" component={BoardFree} />
                 <Route exact path="/main/board/hot" component={BoardHot} />
 
@@ -31,6 +32,7 @@ function Routes() {
                 <Route exact path="/main/board/post/:board/:postNo" component={Post} />
                 {/* <Route exact path="/main/board/post/write" component={PostWrite} /> */}
                 <Route exact path="/main/board/postwrite/:board" component={PostWrite} />
+                <Route exact path="/main/board/postmodify/:board/:postNo" component={PostModify} />
 
                 {/* 공지사항 */}
                 <Route exact path="/main/notice" component={Notice} />

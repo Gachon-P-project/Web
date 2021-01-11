@@ -6,3 +6,33 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
+.post-menu-modal .ant-modal-body {
+    padding: 0;
+}
+
+.post-menu {
+    text-align: center;
+    color: #333333;
+}
+
+.post-menu-item {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.post-menu-item:not(:last-child) {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.post-menu-item > a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.post-menu-title {
+    padding: 5px 0;
+    font-size: 0.8em;
+    color: #797979;
+    cursor: default;
+}

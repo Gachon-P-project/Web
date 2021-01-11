@@ -11,9 +11,9 @@ import EmptyData from './EmptyData';
     fix : 수강 중인 수업 전체 조회
 */
 const subjectData = [
-    {link: '/main/board/subject/컴퓨터구조/이상순/201739423', name: '컴퓨터구조'},
-    {link: '/main/board/subject/컴퓨터공학개론/김진영/201739412', name: '컴퓨터공학개론'},
-    {link: '/main/board/subject/모바일웹/최진우/201739416', name: '모바일웹'},
+    {link: '/main/board/subject/컴퓨터구조/이상순', name: '컴퓨터구조'},
+    {link: '/main/board/subject/컴퓨터공학개론/김진영', name: '컴퓨터공학개론'},
+    {link: '/main/board/subject/모바일웹/최진우', name: '모바일웹'},
 ];
 
 const Empty = () => (

@@ -1,5 +1,5 @@
 /**
- * 게시물 작성
+ * 게시물 수정
  */
 
 import React, { useState } from 'react';
@@ -11,11 +11,18 @@ import { message } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import '../css/PostWrite.css';
 
-function PostWrite(props) {
+function PostModify(props) {
 
     const { params } = props.match;
 
     const board = params.board.split('&');
+
+    // 값 넘겨받았다 치고
+    const postItem = {
+        postNo: params.postNo,
+        title: '게시물',
+        contents: '게시물 테스트중...'
+    }
 
     // 창 크기에 따라 폼 높이 조절
     const size = useWindowSize();
@@ -23,15 +30,15 @@ function PostWrite(props) {
     const height = size[1];
 
 
-    const [title, setTitle] = useState('');         // 입력 제목을 state로 정의
-    const [contents, setContents] = useState('');   // 입력 내용을 state로 정의
+    const [title, setTitle] = useState(postItem.title);             // 입력 제목을 state로 정의
+    const [contents, setContents] = useState(postItem.contents);    // 입력 내용을 state로 정의
 
     const handleTitleChange = (e) => {
-        setTitle(e.target.value);                   // 입력한 제목으로 state 값 변경
+        setTitle(e.target.value);                                   // 입력한 제목으로 state 값 변경
     }
 
     const handleContentsChange = (e) => {
-        setContents(e.target.value);                // 입력한 내용으로 state 값 변경
+        setContents(e.target.value);                                // 입력한 내용으로 state 값 변경
     }
 
     const handleOk = () => {
@@ -52,10 +59,10 @@ function PostWrite(props) {
                 }
             })
         } else {
-            alert('게시판 '+ params.board + '\n제목 ' + title + '\n내용 ' + contents + '\n추가해라');
+            alert('게시판 : '+ params.board + '\n제목 : ' + title + '\n내용 : ' + contents + '\n수정해라');
 
             /*
-                fix : 게시물 추가
+                fix : 게시물 수정
             */
 
             if (board[0] === 'major') {
@@ -64,6 +71,8 @@ function PostWrite(props) {
                 history.push('/main/board/subject/'+board[1]+'/'+board[2]);
             } else if (board[0] === 'free') {
                 history.push('/main/board/free');
+            } else if (board[0] === 'hot') {
+                history.push('/main/board/hot');
             }
         }
     }
@@ -80,11 +89,11 @@ function PostWrite(props) {
             <div>
                 <div className="post-write">
                     <div className="pw-close" onClick={handleClose}><CloseOutlined /></div>
-                    <div className="pw-header bold">글 쓰기</div>
+                    <div className="pw-header bold">글 수정</div>
                     <div className="pw-ok" onClick={handleOk}>완료</div>
-                    <div className="pw-title"><input type="text" placeholder="제목" onChange={handleTitleChange} /></div>
+                    <div className="pw-title"><input type="text" placeholder="제목" onChange={handleTitleChange} value={title} /></div>
                     <div className="pw-contents">
-                        <textarea style={{ height: width > 736 ? height-260 : height-220 }} onChange={handleContentsChange} placeholder={conp}></textarea>
+                        <textarea style={{ height: width > 736 ? height-260 : height-220 }} onChange={handleContentsChange} placeholder={conp} value={contents}></textarea>
                         
                         {/* 모바일에서 placeholder 줄바꿈 안되는 문제 처리 필요
                         <div className="pw-placeholder">
@@ -102,4 +111,4 @@ function PostWrite(props) {
     );
 }
 
-export default withRouter(PostWrite);
+export default withRouter(PostModify);

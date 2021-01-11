@@ -3,6 +3,7 @@
  */
 
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import { Modal } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
 import '../css/PostMenu.css';
@@ -38,12 +39,16 @@ function PostMenu(props) {
         */
         ?
             <PostMenuItem
+                board = {props.board}
+                postNo = {props.postNo}
                 sameUser = "true"
                 state = {modalState}
                 close = {closeModal}
             />
         :
             <PostMenuItem
+                board = {props.board}
+                postNo = {props.postNo}
                 sameUser = "false"
                 state = {modalState}
                 close = {closeModal}
@@ -58,9 +63,26 @@ function PostMenu(props) {
  * 게시물 메뉴 구성
  */
 function PostMenuItem(props) {
+
+    const history = useHistory();
+
+    const handleModify = () => {
+        history.push('/main/board/postmodify/'+props.board+'/'+props.postNo);
+    }
+    
+    const handleDelete = () => {
+        alert('삭제');
+    }
+
+    const handleReport = () => {
+        alert('신고하기');
+    }
+
     return (
         props.state &&
         <Modal
+            className="post-menu-modal"
+            width={200}
             centered
             visible={props.state}
             closable={false}
@@ -70,9 +92,18 @@ function PostMenuItem(props) {
         >
             {props.sameUser === 'true'
             ?
-                <div>메뉴 - 게시물 수정, 삭제</div>
+                // 메뉴 - 게시물 수정, 삭제
+                <div className="post-menu">
+                    <div className="post-menu-item post-menu-title">글 메뉴</div>
+                    <div className="post-menu-item" onClick={handleModify}>수정</div>
+                    <div className="post-menu-item" onClick={handleDelete}>삭제</div>
+                </div>
             :
-                <div>메뉴 - 신고하기</div>
+                // 메뉴 - 신고하기
+                <div className="post-menu">
+                    <div className="post-menu-item post-menu-title">글 메뉴</div>
+                    <div className="post-menu-item" onClick={handleReport}>신고하기</div>
+                </div>
             }
         </Modal>
     );

@@ -50,7 +50,11 @@ function Post(props) {
             <PageHeader title={headerTitle} />
 
             {/* 게시물 메뉴 */}
-            <PostMenu userNo={postItem.userNo} />
+            <PostMenu
+                board={params.board}
+                postNo={postItem.postNo}
+                userNo={postItem.userNo}
+            />
 
             {/* 게시물 */}
             <PostItem
