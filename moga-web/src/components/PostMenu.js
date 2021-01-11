@@ -82,7 +82,7 @@ function PostMenuItem(props) {
         props.state &&
         <Modal
             className="post-menu-modal"
-            width={200}
+            width={250}
             centered
             visible={props.state}
             closable={false}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import ScrollToTop from './components/ScrollToTop';
 import Login from './components/Login';
 import Main from './components/Main';
 import BoardMajor from './components/BoardMajor';
@@ -16,6 +17,8 @@ import Timetable from './components/Timetable';
 function Routes() {
     return(
         <Router>
+            <ScrollToTop />
+            
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/main" component={Main} />

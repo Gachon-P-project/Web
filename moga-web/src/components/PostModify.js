@@ -60,6 +60,13 @@ function PostModify(props) {
             })
         } else {
             alert('게시판 : '+ params.board + '\n제목 : ' + title + '\n내용 : ' + contents + '\n수정해라');
+            message.success({
+                content: '수정되었습니다.',
+                duration: 1,
+                style: {
+                    marginTop: height*0.1
+                }
+            })
 
             /*
                 fix : 게시물 수정
