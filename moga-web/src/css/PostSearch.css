@@ -1,0 +1,60 @@
+.post-search-wrap {
+    position: relative;
+    padding-top: 10px;
+}
+
+.post-search {
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.post-search-icon {
+    display: inline-block;
+    font-size: 1.3em;
+    color: #757575;
+    max-height: 31.6px;
+    line-height: 31.6px;
+    position: absolute;
+    left: 20px;
+}
+
+.post-search-input {
+    background-color: #eeeeee;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 35px;
+}
+
+.post-search-input:focus {
+    outline: none;
+}
+
+.post-search-cancel {
+    float: right;
+    font-size: 1.3em;
+    max-height: 31.6px;
+    line-height: 31.6px;
+    cursor: pointer;
+}
+
+.post-search-cancel > .anticon-close-circle > svg {
+    fill: #303F9F;
+}
+
+
+/* 검색 전 초기 상태 */
+.post-search-init {
+    text-align: center;
+    padding: 100px 10px 0;
+}
+
+.post-search-init-icon {
+    font-size: 5em;
+    color: #d6d6d6;
+}
+
+.post-search-init-info {
+    color: #a6a6a6;
+    font-size: 1.3em;
+}

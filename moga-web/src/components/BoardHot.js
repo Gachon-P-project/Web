@@ -14,9 +14,9 @@ function BoardHOT() {
         fix : HOT 게시물 전체 조회
     */
     const postItems = [
-        {no: 0, link: '/main/board/post/hot/', title: 'hot 게시물 제목1', contents: '게시물 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
-        {no: 1, link: '/main/board/post/hot/', title: 'hot 게시물 제목2', contents: '게시물 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-        {no: 2, link: '/main/board/post/hot/', title: 'hot 게시물 제목3', contents: '게시물 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
+        {no: 1, link: '/main/board/post/hot/', title: 'hot 게시물 제목1', contents: '게시물 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
+        {no: 2, link: '/main/board/post/hot/', title: 'hot 게시물 제목2', contents: '게시물 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
+        {no: 3, link: '/main/board/post/hot/', title: 'hot 게시물 제목3', contents: '게시물 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
 

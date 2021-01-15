@@ -15,9 +15,9 @@ function BoardFree() {
         fix : 자유 게시물 전체 조회
     */
     const postItems = [
-        {no: 0, link: '/main/board/post/free/', title: '자유 게시물 제목1', contents: '자유 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
-        {no: 1, link: '/main/board/post/free/', title: '자유 게시물 제목2', contents: '자유 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-        {no: 2, link: '/main/board/post/free/', title: '자유 게시물 제목3', contents: '자유 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
+        {no: 1, link: '/main/board/post/free/', title: '자유 게시물 제목1', contents: '자유 내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
+        {no: 2, link: '/main/board/post/free/', title: '자유 게시물 제목2', contents: '자유 내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
+        {no: 3, link: '/main/board/post/free/', title: '자유 게시물 제목3', contents: '자유 내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
     return (
@@ -26,7 +26,7 @@ function BoardFree() {
             <Breadcrumb link="/main/board/free" name="자유 게시판" />
 
             {/* search button */}
-            <PostSearchBtn />
+            <PostSearchBtn board="free" />
 
             {/* post list */}
             {postItems.length === 0

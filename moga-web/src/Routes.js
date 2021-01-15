@@ -9,6 +9,7 @@ import BoardSubject from './components/BoardSubject';
 import BoardFree from './components/BoardFree';
 import BoardHot from './components/BoardHot';
 import Post from './components/Post';
+import PostSearch from './components/PostSearch';
 import PostWrite from './components/PostWrite';
 import PostModify from './components/PostModify';
 import PostDelete from './components/PostDelete';
@@ -34,6 +35,7 @@ function Routes() {
                 {/* 게시물 */}
                 {/* <Route exact path="/main/board/post" component={Post} /> */}
                 <Route exact path="/main/board/post/:board/:postNo" component={Post} />
+                <Route exact path="/main/board/postsearch/:board" component={PostSearch} />
                 {/* <Route exact path="/main/board/post/write" component={PostWrite} /> */}
                 <Route exact path="/main/board/postwrite/:board" component={PostWrite} />
                 <Route exact path="/main/board/postmodify/:board/:postNo" component={PostModify} />

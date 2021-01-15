@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import '../css/PostSearchBtn.css'
 
-function PostSearchBtn() {
+function PostSearchBtn(props) {
+
+    const link = '/main/board/postsearch/'+props.board;
+
     return (
         <div className="post-search-btn">
-            <Link to=""><SearchOutlined /></Link>
+            <Link to={link}><SearchOutlined /></Link>
         </div>
     );
 }

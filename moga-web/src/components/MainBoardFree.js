@@ -13,10 +13,10 @@ import EmptyData from './EmptyData';
     fix : 자유 게시물 조회 (최근 4개)
 */
 const freeData = [
-    {no: 0, link: '/main/board/post/free/', title: '자유 게시물 제목1', time: '방금'},
-    {no: 1, link: '/main/board/post/free/', title: '자유 게시물 제목2', time: '10분 전'},
-    {no: 2, link: '/main/board/post/free/', title: '자유 게시물 제목3', time: '21/01/01 18:00'},
-    {no: 3, link: '/main/board/post/free/', title: '자유 게시물 제목4', time: '20/12/30 12:30'},
+    {no: 1, link: '/main/board/post/free/', title: '자유 게시물 제목1', time: '방금'},
+    {no: 2, link: '/main/board/post/free/', title: '자유 게시물 제목2', time: '10분 전'},
+    {no: 3, link: '/main/board/post/free/', title: '자유 게시물 제목3', time: '21/01/01 18:00'},
+    {no: 4, link: '/main/board/post/free/', title: '자유 게시물 제목4', time: '20/12/30 12:30'},
 ];
 
 function MainBoardFree() {

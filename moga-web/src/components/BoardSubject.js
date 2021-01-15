@@ -18,9 +18,9 @@ function BoardSubject(props) {
         fix : 수업별 게시글 전체 조회
     */
     const postItems = [
-        {no: 0, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목1', contents: '내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
-        {no: 1, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-        {no: 2, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
+        {no: 1, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목1', contents: '내용1', time: '시간', writer: '작성자', like: 0, reply: 0},
+        {no: 2, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
+        {no: 3, link: '/main/board/post/subject&'+params.subject+'&'+params.professor+'/', title: '제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4}
     ];
 
     return (
@@ -29,7 +29,7 @@ function BoardSubject(props) {
             <Breadcrumb link="#, #" name={"수업 게시판, " + params.subject} />
 
             {/* search button */}
-            <PostSearchBtn />
+            <PostSearchBtn board={'subject&'+params.subject+'&'+params.professor} />
 
             {/* post list */}
             {postItems.length === 0
