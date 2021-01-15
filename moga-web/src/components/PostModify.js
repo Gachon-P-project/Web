@@ -15,8 +15,6 @@ function PostModify(props) {
 
     const { params } = props.match;
 
-    const board = params.board.split('&');
-
     // 값 넘겨받았다 치고
     const postItem = {
         postNo: params.postNo,
@@ -71,16 +69,21 @@ function PostModify(props) {
             /*
                 fix : 게시물 수정
             */
+            history.goBack();   // 수정 후 게시물로 돌아가기
 
+            /* 이렇게 이동하면 게시물 수정 후 헤더 뒤로가기 눌렀을 때 다시 수정화면으로 돌아감
+                -> back으로 수정했는데(위에 한 줄) 데이터 reload 되는지 확인 필요
+            const board = params.board.split('&');
             if (board[0] === 'major') {
-                history.push('/main/board/major');
+                history.push('/main/board/post/major/'+params.postNo);
             } else if (board[0] === 'subject') {
-                history.push('/main/board/subject/'+board[1]+'/'+board[2]);
+                history.push('/main/board/post/subject/'+board[1]+'/'+board[2]+params.postNo);
             } else if (board[0] === 'free') {
-                history.push('/main/board/free');
+                history.push('/main/board/post/free'+params.postNo);
             } else if (board[0] === 'hot') {
-                history.push('/main/board/hot');
+                history.push('/main/board/post/hot'+params.postNo);
             }
+            */
         }
     }
 
