@@ -1,0 +1,38 @@
+.noticeList {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.noticeList:hover {
+    background-color: #f3f3f3;
+}
+
+.noticeList > a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.noticeList-title {
+    max-height: 21.6px;
+    overflow: hidden;
+}
+
+.noticeList-date {
+    float: left;
+    margin-right: 7px;
+    font-size: 0.8em;
+    color: #9e9e9e;
+}
+
+.noticeList-file {
+    float: left;
+    margin-right: 15px;
+    font-size: 0.8em;
+    color: #03A9F4;
+}
+
+.noticeList-view {
+    color: #9e9e9e;
+    font-size: 0.8em;
+}

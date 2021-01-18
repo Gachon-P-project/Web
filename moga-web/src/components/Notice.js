@@ -1,17 +1,83 @@
 /**
- * 학과 공지사항
+ * 공지사항
  */
 
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import useWindowSize from './useWindowSize';
+import useHistoryState from './useHistoryState';
 import Layout from './Layout';
 import PageHeader from './PageHeader';
-import { SearchOutlined, SaveOutlined, EyeFilled } from '@ant-design/icons';
+import NoticeList from './NoticeList';
+import NoticeSearch from './NoticeSearch';
+import { SearchOutlined, CloseCircleFilled } from '@ant-design/icons';
 import '../css/Notice.css'
 
 function Notice() {
 
+    // 창 크기에 따라 input width 조절
+    const size = useWindowSize();
+    const width = size[0];
+    let inputWidth;
+    width > 736 ? inputWidth = { width: '700px' } : inputWidth = { width: width - 20 };
+
+    // 검색 상태 관리
+    const [word, setWord] = useHistoryState('', 'word');                // 입력 검색어를 state에 저장(뒤로가기로 돌아와도 유지)
+    const [cancel, setCancel] = useHistoryState('hidden', 'cancel');    // 검색 취소 버튼 state에 저장(뒤로가기로 돌아와도 유지)
+    const handleInputChange = (e) => {
+        setWord(e.target.value);                                        // 입력한 검색어로 state 값 변경
+        setCancel('visible');                                           // 검색어 입력되면 x 버튼 보이기
+        setList(() => 'init');                                          // 입력 중엔 전체 공지사항 보이기
+
+        e.target.value === '' && setCancel('hidden');                   // 검색어 다 지워지면 x 버튼 숨기기
+    }
+
+    // 검색 상태에 따른 리스트 부분 렌더링
+    const [list, setList] = useHistoryState('init', 'list');            // 결과를 state에 저장(뒤로가기로 돌아와도 유지)
+    const obj = {
+        init: <NoticeInit />,                                           // 검색 전 초기 상태
+        search: <NoticeSearch word={word} />                            // 검색 후
+    };
+
+    // 엔터키 누르면 검색
+    const onKeyPress = (e) => {
+
+        if (word !== '' && e.key === 'Enter') {
+            setList(() => 'search');
+        }
+    }
+
+    // 검색 취소
+    const handleCancle = () => {
+        setWord('');
+        setCancel('hidden');
+        setList(() => 'init');
+    }
+
+    return (
+        <Layout header footer>
+            {/* back button, pageHeader */}
+            <PageHeader title="공지사항" />
+
+            {/* 공지사항 검색 */}
+            <div className="notice-search">
+                <div className="notice-search-icon"><SearchOutlined /></div>
+                <input
+                    className="notice-search-input" autoFocus type="text" style={inputWidth} placeholder="제목을 검색해보세요."
+                    value={word}
+                    onChange={handleInputChange}
+                    onKeyPress={onKeyPress}
+                />
+                <div className="notice-search-cancel" style={{ visibility: cancel }} onClick={handleCancle}><CloseCircleFilled /></div>
+            </div>
+
+            {/* 공지사항 목록 */}
+            {obj[list]}
+        </Layout>
+    );
+}
+
+function NoticeInit() {
     /*
         fix : 공지사항 조회
     */
@@ -23,53 +89,19 @@ function Notice() {
         { num: 1878, link: '/main/notice/', board_no: 1954, title: '[LINC+] 스마트에너지시스템 융합전공 학생 모집(예비3학년)', file: 1, date: '2020-12-11', view: 32 },
     ];
 
-    // 창 크기에 따라 input width 조절
-    const size = useWindowSize();
-    const width = size[0];
-    let inputWidth;
-    width > 736 ? inputWidth = { width: '700px' } : inputWidth = { width: width - 20 };
-
     return (
-        <Layout header footer>
-            {/* back button, pageHeader */}
-            <PageHeader title="공지사항" />
-
-            {/* 공지사항 검색 */}
-            <div className="notice-search">
-                <div className="notice-search-icon"><SearchOutlined /></div>
-                <input
-                    className="notice-search-input" autoFocus type="text" style={inputWidth} placeholder="제목을 검색해 보세요."
-                />
-            </div>
-
-            {/* 공지사항 목록 */}
-            {noticeItems.map((noticeItem) =>
-                <NoticeList
-                    link={noticeItem.link + noticeItem.board_no}
-                    title={noticeItem.title}
-                    file={noticeItem.file}
-                    date={noticeItem.date}
-                    view={noticeItem.view}
-                    key={noticeItem.board_no}
-                />
-            )}
-        </Layout>
+        noticeItems.map((noticeItem) =>
+            <NoticeList
+                link={noticeItem.link + noticeItem.board_no}
+                title={noticeItem.title}
+                file={noticeItem.file}
+                date={noticeItem.date}
+                view={noticeItem.view}
+                key={noticeItem.board_no}
+            />
+        )
     );
-}
 
-// 공지사항 목록 UI
-function NoticeList(props) {
-
-    return (
-        <div className="noticeList">
-            <Link to={props.link}>
-                <div className="noticeList-title">{props.title}</div>
-                <div className="noticeList-date">{props.date}</div>
-                <div className="noticeList-file" style={ props.file === 0 ? { display: 'none' } : { display: 'block' }}><SaveOutlined /></div>
-                <div className="noticeList-view"><EyeFilled /> {props.view}</div>
-            </Link>
-        </div>
-    );
 }
 
 export default withRouter(Notice);
