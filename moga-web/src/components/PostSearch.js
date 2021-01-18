@@ -2,14 +2,15 @@
  * 게시물 검색
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import useWindowSize from './useWindowSize';
+import useHistoryState from './useHistoryState';
 import PostSearchResult from './PostSearchResult';
 import { CloseCircleFilled, SearchOutlined } from '@ant-design/icons';
-import '../css/PostSearch.css'
+import '../css/PostSearch.css';
 
 function PostSearch(props) {
     const { params } = props.match;
@@ -26,53 +27,25 @@ function PostSearch(props) {
         history.goBack();
     }
 
-    // 검색 결과 담을 state 초기화
-    const [results, setResults] = useState({
-        no: 0,
-        link: '',
-        title: '',
-        contents: '',
-        time: '',
-        writer: '',
-        like: 0,
-        reply: 0
-    });
-
-    const [word, setWord] = useState('');   // 입력 검색어를 state로 정의
+    // 검색어 상태 관리
+    const [word, setWord] = useHistoryState('', 'word');    // 입력 검색어를 state에 저장(뒤로가기로 돌아와도 유지)
     const handleInputChange = (e) => {
-        setWord(e.target.value);            // 입력한 검색어로 state 값 변경
-        setSearch('init');                  // 입력 시 검색 결과창 초기화
+        setWord(e.target.value);                            // 입력한 검색어로 state 값 변경
+        setResult('init');                                  // 입력 중엔 검색 결과창 초기화
     }
 
     // 검색 상태에 따른 결과 부분 렌더링
-    const [search, setSearch] = useState('init');
+    const [result, setResult] = useHistoryState('init', 'search');      // 결과를 state에 저장(뒤로가기로 돌아와도 유지)
     const obj = {
-        init : <PostSearchInit board={params.board} />, // 검색 전 초기 상태
-        notFound: <PostSearchNotFound />,               // 검색 후 결과 없는 경우
-        success: <PostSearchResult result={results} />  // 검색 후 결과 있는 경우
+        init : <PostSearchInit />,                                      // 검색 전 초기 상태
+        search: <PostSearchResult board={params.board} word={word} />   // 검색 후
     };
 
     // 엔터키 누르면 검색
     const onKeyPress = (e) => {
 
         if (word !== '' && e.key === 'Enter') {
-            console.log('검색어 : ', word);
-
-            /*
-                fix : 특정 게시물 조회
-            */
-            const searchItems = [
-                {no: 1, link: '/main/board/post/'+params.board+'/', title: '게시물 제목1', contents: '내용1', time: '시간', writer: '작성자', like: 1, reply: 2},
-                {no: 2, link: '/main/board/post/'+params.board+'/', title: '게시물 제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2},
-                {no: 3, link: '/main/board/post/'+params.board+'/', title: '게시물 제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4},
-            ];
-
-            if (searchItems.length !== 0) {
-                setResults(searchItems);
-                setSearch('success');
-            } else {
-                setSearch('notFound');
-            }
+            setResult(() => 'search');
         }
     }    
 
@@ -80,16 +53,24 @@ function PostSearch(props) {
         <Layout header footer>
             <div className="post-search-wrap">
 
-                {/* 검색어 입력 */}
                 <div className="post-search">
                     <div className="post-search-icon"><SearchOutlined /></div>
-                    <input className="post-search-input" autoFocus style={inputWidth} type="text" placeholder="글 제목, 내용" onChange={handleInputChange} onKeyPress={onKeyPress} />
+
+                    {/* 검색어 입력 */}
+                    <input
+                        className="post-search-input" autoFocus style={inputWidth} type="text" placeholder="글 제목, 내용"
+                        value={word}
+                        onChange={handleInputChange}
+                        onKeyPress={onKeyPress}
+                    />
+
+                    {/* 검색 취소 */}
                     <div className="post-search-cancel" onClick={handleCancle}><CloseCircleFilled /></div>
                 </div>
 
                 {/* 검색 결과 */}
                 <div className="post-search-result">
-                    {obj[search]}
+                    {obj[result]}
                 </div>
                 
             </div>
@@ -106,24 +87,9 @@ function PostSearchInit() {
     const height = size[1];
 
     return (
-        <div style={{ height: width > 736 ? height-160 : height-120 }} className="post-search-init">
+        <div style={{ height: width > 736 ? height-170 : height-130 }} className="post-search-init">
             <div className="post-search-init-icon"><SearchOutlined /></div>
             <div className="post-search-init-info">게시판의 글을 검색해보세요</div>
-        </div>
-    );
-}
-
-// 검색 후 결과 없는 경우
-function PostSearchNotFound() {
-
-    // 창 크기에 따라 폼 높이 조절
-    const size = useWindowSize();
-    const width = size[0];
-    const height = size[1];
-
-    return (
-        <div style={{ height: width > 736 ? height-160 : height-120 }}>
-            검색 결과 없음
         </div>
     );
 }
