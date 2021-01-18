@@ -5,14 +5,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
-import Breadcrumb from './Breadcrumb';
+import PageHeader from './PageHeader';
 
 function Timetable() {
 
     return (
         <Layout header footer>
-            {/* breadcrumb */}
-            <Breadcrumb link="/timetable" name="시간표" />
+            {/* back button, pageHeader */}
+            <PageHeader title="시간표" />
         </Layout>
     );
 }

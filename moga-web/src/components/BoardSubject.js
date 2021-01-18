@@ -5,7 +5,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
-import Breadcrumb from './Breadcrumb';
+import PageHeader from './PageHeader';
 import PostSearchBtn from './PostSearchBtn';
 import PostWriteBtn from './PostWriteBtn';
 import PostList from './PostList';
@@ -25,8 +25,12 @@ function BoardSubject(props) {
 
     return (
         <Layout header footer>
-            {/* breadcrumb */}
-            <Breadcrumb link="#, #" name={"수업 게시판, " + params.subject} />
+            {/* back button, pageHeader */}
+            
+            {/*
+                fix : title에 수업명. parameter 받는 방법 변경 시 수정 필요
+            */}
+            <PageHeader title={params.subject} />
 
             {/* search button */}
             <PostSearchBtn board={'subject&'+params.subject+'&'+params.professor} />

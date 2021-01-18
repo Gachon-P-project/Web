@@ -5,7 +5,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
-import Breadcrumb from './Breadcrumb';
+import PageHeader from './PageHeader';
 import PostList from './PostList';
 
 function BoardHOT() {
@@ -22,8 +22,8 @@ function BoardHOT() {
 
     return (
         <Layout header footer>
-            {/* breadcrumb */}
-            <Breadcrumb link="/main/board/hot" name="HOT 게시판" />
+            {/* back button, pageHeader */}
+            <PageHeader title="HOT 게시판" />
 
             {/* post list */}
             {postItems.length === 0

@@ -5,7 +5,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
-import Breadcrumb from './Breadcrumb';
+import PageHeader from './PageHeader';
 import PostSearchBtn from './PostSearchBtn';
 import PostWriteBtn from './PostWriteBtn';
 import PostList from './PostList';
@@ -25,8 +25,8 @@ function BoardMajor() {
 
     return (
         <Layout header footer>
-            {/* breadcrumb */}
-            <Breadcrumb link="/main/board/major" name="학과 게시판" />
+            {/* back button, pageHeader */}
+            <PageHeader title="학과 게시판" />
 
             {/* search button */}
             <PostSearchBtn board="major" />

@@ -5,14 +5,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
-import Breadcrumb from './Breadcrumb';
+import PageHeader from './PageHeader';
 
 function Notice() {
 
     return (
         <Layout header footer>
-            {/* breadcrumb */}
-            <Breadcrumb link="/notice" name="공지사항" />
+            {/* back button, pageHeader */}
+            <PageHeader title="공지사항" />
         </Layout>
     );
 }
