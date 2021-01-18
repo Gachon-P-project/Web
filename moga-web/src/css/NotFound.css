@@ -1,0 +1,14 @@
+.not-found {
+    text-align: center;
+    padding: 100px 10px 0;
+}
+
+.not-found-icon {
+    width: 70px;
+}
+
+.not-found-info {
+    margin-top: 15px;
+    color: #757575;
+    font-size: 1.1em;
+}
