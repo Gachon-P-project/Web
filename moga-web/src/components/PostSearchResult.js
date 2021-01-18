@@ -3,31 +3,43 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { LikeOutlined, MessageOutlined } from '@ant-design/icons';
-import '../css/PostList.css';
+import NotFound from './NotFound';
+import PostList from './PostList';
 
 function PostSearchResult(props) {
 
+    console.log('검색어 : ', props.word);
+
+    /*
+        fix : 특정 게시물 조회
+    */
+
+    const searchItems = [
+        { no: 1, link: '/main/board/post/' + props.board + '/', title: '게시물 제목1', contents: '내용1', time: '시간', writer: '작성자', like: 1, reply: 2 },
+        { no: 2, link: '/main/board/post/' + props.board + '/', title: '게시물 제목2', contents: '내용2', time: '시간', writer: '작성자', like: 1, reply: 2 },
+        { no: 3, link: '/main/board/post/' + props.board + '/', title: '게시물 제목3', contents: '내용3', time: '시간', writer: '작성자', like: 2, reply: 4 },
+    ];
+
     return (
         <>
-        {props.result.map((result) =>
-            <div className="postList" key={result.no}>
-                <Link to={result.link+result.no}>
-                    <div className="postList-title">{result.title}</div>
-                    <div className="postList-contents">{result.contents}</div>
-                    
-                    <div className="postList-time">{result.time}&nbsp;|</div>
-                    <div className="postList-writer">&nbsp;{result.writer}</div>
-                
-                    <div className="postList-status">
-                        <div className="postList-like"><LikeOutlined /> {result.like}</div>
-                        <div className="postList-reply"><MessageOutlined /> {result.reply}</div>
-                    </div>
-                </Link>
-            </div>
-        )}
-        <div></div>
+            {searchItems.length === 0
+                ?
+                <NotFound />
+                :
+                searchItems.map((result) =>
+                    <PostList
+                        empty="n"
+                        link={result.link + result.no}
+                        title={result.title}
+                        contents={result.contents}
+                        time={result.time}
+                        writer={result.writer}
+                        like={result.like}
+                        reply={result.reply}
+                        key={result.no}
+                    />
+                )
+            }
         </>
     );
 }
