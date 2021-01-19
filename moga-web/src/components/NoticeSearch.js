@@ -15,8 +15,8 @@ function NoticeSearch(props) {
     */
 
     const searchItems = [
-        { num: 1882, link: '/main/notice/', board_no: 1958, title: 'X-Design 경진대회 결과', file: 0, date: '2020-12-19', view: 29 },
-        { num: 1881, link: '/main/notice/', board_no: 1957, title: '2021-1학기 교내장학금 신청기간 안내', file: 1, date: '2020-12-16', view: 143 },
+        { num: 1879, link: '/main/notice/', board_no: 1955, title: '2020학년도 창의NTree 미참석자 과제제출', file: 0, date: '2020-12-11', view: 82 },
+        { num: 1878, link: '/main/notice/', board_no: 1954, title: '[LINC+] 스마트에너지시스템 융합전공 학생 모집(예비3학년)', file: 1, date: '2020-12-11', view: 32 },
     ];
 
     return (

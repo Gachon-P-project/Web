@@ -46,6 +46,7 @@ function PostSearch(props) {
 
         if (word !== '' && e.key === 'Enter') {
             setResult(() => 'search');
+            document.activeElement.blur();                              // 검색 후 키보드 내리기
         }
     }    
 

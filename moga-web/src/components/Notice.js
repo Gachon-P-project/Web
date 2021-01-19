@@ -44,6 +44,9 @@ function Notice() {
 
         if (word !== '' && e.key === 'Enter') {
             setList(() => 'search');
+            document.activeElement.blur();                              // 검색 후 키보드 내리기
+        } else if (word === '' && e.key === 'Enter') {
+            document.activeElement.blur();                              // 검색어 없이 엔터 누르면 키보드 내리기
         }
     }
 
@@ -63,7 +66,7 @@ function Notice() {
             <div className="notice-search">
                 <div className="notice-search-icon"><SearchOutlined /></div>
                 <input
-                    className="notice-search-input" autoFocus type="text" style={inputWidth} placeholder="제목을 검색해보세요."
+                    className="notice-search-input" type="text" style={inputWidth} placeholder="제목을 검색해보세요."
                     value={word}
                     onChange={handleInputChange}
                     onKeyPress={onKeyPress}
@@ -77,6 +80,7 @@ function Notice() {
     );
 }
 
+// 전체 공지사항 리스트
 function NoticeInit() {
     /*
         fix : 공지사항 조회
