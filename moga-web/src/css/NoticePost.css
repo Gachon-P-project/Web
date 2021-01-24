@@ -1,0 +1,37 @@
+.notice {
+    /* background-color: lavender; */
+    padding: 0 20px 20px;
+}
+
+.notice-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.notice-date {
+    float: left;
+}
+
+.notice-view {
+    float: right;
+}
+
+.notice-file {
+    clear: both;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.notice-file > a {
+    text-decoration: none;
+    display: block;
+}
+
+.notice-file-icon {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.notice-contents {
+    margin-top: 10px;
+}

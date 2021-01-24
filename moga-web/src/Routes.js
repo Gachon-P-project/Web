@@ -14,6 +14,7 @@ import PostWrite from './components/PostWrite';
 import PostModify from './components/PostModify';
 import PostDelete from './components/PostDelete';
 import Notice from './components/Notice';
+import NoticePost from './components/NoticePost';
 import Timetable from './components/Timetable';
 
 function Routes() {
@@ -43,6 +44,7 @@ function Routes() {
 
                 {/* 공지사항 */}
                 <Route exact path="/main/notice" component={Notice} />
+                <Route exact path="/main/notice/:board_no" component={NoticePost} />
 
                 {/* 시간표 */}
                 <Route exact path="/main/timetable" component={Timetable} />

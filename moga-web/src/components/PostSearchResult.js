@@ -8,7 +8,7 @@ import PostList from './PostList';
 
 function PostSearchResult(props) {
 
-    console.log('검색어 : ', props.word);
+    console.log('게시판 :', props.board, ', 검색어 :', props.word);
 
     /*
         fix : 특정 게시물 조회
