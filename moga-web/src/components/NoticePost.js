@@ -6,13 +6,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Layout from './Layout';
 import PageHeader from './PageHeader';
+import NoticePostUrl from './NoticePostUrl'
 import hwp from '../image/notice_icon/icon_hwp.gif';
 import '../css/NoticePost.css'
 
 function NoticePost(props) {
     const { params } = props.match;
 
-    // alert('board_no : ' + params.board_no)
+    alert('board_no : ' + params.board_no)
 
     /*
         fix : 공지사항 게시물 선택
@@ -22,6 +23,9 @@ function NoticePost(props) {
         <Layout header footer>
             {/* back button, pageHeader */}
             <PageHeader title="공지사항" />
+
+            {/* 학과 홈페이지 공지사항으로 이동 */}
+            <NoticePostUrl board_no={params.board_no} />
 
             {/* 공지사항 내용 */}
             <div className="notice">
