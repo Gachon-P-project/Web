@@ -4,6 +4,10 @@
     cursor: pointer;
 }
 
+.noticeList-0 {
+    background-color: #f0ffff;
+}
+
 .noticeList:hover {
     background-color: #f3f3f3;
 }

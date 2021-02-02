@@ -8,8 +8,9 @@ import { SaveOutlined, EyeFilled } from '@ant-design/icons';
 import '../css/NoticeList.css'
 
 function NoticeList(props) {
+
     return (
-        <div className="noticeList">
+        <div className={props.num === 0 ? "noticeList noticeList-0" : "noticeList"}>
             <Link to={props.link}>
                 <div className="noticeList-title">{props.title}</div>
                 <div className="noticeList-date">{props.date}</div>

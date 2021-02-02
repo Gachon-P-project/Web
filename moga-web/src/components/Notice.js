@@ -86,6 +86,8 @@ function NoticeInit() {
         fix : 공지사항 조회
     */
     const noticeItems = [
+        { num: 0, link: '/main/notice/', board_no: 1958, title: 'X-Design 경진대회 결과', file: 0, date: '2020-12-19', view: 29 },
+        { num: 0, link: '/main/notice/', board_no: 1957, title: '2021-1학기 교내장학금 신청기간 안내', file: 1, date: '2020-12-16', view: 143 },
         { num: 1882, link: '/main/notice/', board_no: 1958, title: 'X-Design 경진대회 결과', file: 0, date: '2020-12-19', view: 29 },
         { num: 1881, link: '/main/notice/', board_no: 1957, title: '2021-1학기 교내장학금 신청기간 안내', file: 1, date: '2020-12-16', view: 143 },
         { num: 1880, link: '/main/notice/', board_no: 1956, title: '2020-2nd Semester Announcement of Grades and Correction peri...', file: 1, date: '2020-12-14', view: 130 },
@@ -94,14 +96,15 @@ function NoticeInit() {
     ];
 
     return (
-        noticeItems.map((noticeItem) =>
+        noticeItems.map((noticeItem, i) =>
             <NoticeList
+                num={noticeItem.num}
                 link={noticeItem.link + noticeItem.board_no}
                 title={noticeItem.title}
                 file={noticeItem.file}
                 date={noticeItem.date}
                 view={noticeItem.view}
-                key={noticeItem.board_no}
+                key={i}
             />
         )
     );
