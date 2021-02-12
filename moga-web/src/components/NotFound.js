@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import useWindowSize from './useWindowSize';
+import useWindowSize from './common/useWindowSize';
 import notFoundIcon from '../image/thinking.svg';
-import '../css/NotFound.css'
+import './NotFound.css'
 
 function NotFound() {
 

@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Layout from './Layout';
-import PageHeader from './PageHeader';
+import Layout from './common/Layout';
+import PageHeader from './common/PageHeader';
 
 function Timetable() {
 

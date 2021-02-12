@@ -2,20 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import ScrollToTop from './components/ScrollToTop';
-import Login from './components/Login';
-import Main from './components/Main';
-import BoardMajor from './components/BoardMajor';
-import BoardSubject from './components/BoardSubject';
-import BoardFree from './components/BoardFree';
-import BoardHot from './components/BoardHot';
-import Post from './components/Post';
-import PostSearch from './components/PostSearch';
-import PostWrite from './components/PostWrite';
-import PostModify from './components/PostModify';
-import PostDelete from './components/PostDelete';
-import Notice from './components/Notice';
-import NoticePost from './components/NoticePost';
+import Login from './components/login/Login';
+import Main from './components/board/main/Main';
+import BoardMajor from './components/board/category/BoardMajor';
+import BoardSubject from './components/board/category/BoardSubject';
+import BoardFree from './components/board/category/BoardFree';
+import BoardHot from './components/board/category/BoardHot';
+import Post from './components/board/post/Post';
+import PostSearch from './components/board/post/PostSearch';
+import PostWrite from './components/board/post/PostWrite';
+import PostModify from './components/board/post/PostModify';
+import PostDelete from './components/board/post/PostDelete';
+import Notice from './components/notice/Notice';
+import NoticePost from './components/notice/NoticePost';
 import Timetable from './components/Timetable';
+
 
 function Routes() {
     return(
