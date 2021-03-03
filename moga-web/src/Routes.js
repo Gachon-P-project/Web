@@ -15,7 +15,7 @@ import PostModify from './components/board/post/PostModify';
 import PostDelete from './components/board/post/PostDelete';
 import Notice from './components/notice/Notice';
 import NoticePost from './components/notice/NoticePost';
-import Timetable from './components/Timetable';
+import Timetable from './components/timetable/Timetable';
 
 
 function Routes() {
